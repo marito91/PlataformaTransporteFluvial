@@ -1,0 +1,166 @@
+ .u-section-1 {
+  background-image: none;
+  min-height: 656px;
+}
+
+.u-section-1 .u-icon-1 {
+  width: calc(((100% - 1140px) / 2) + 509px);
+  height: 439px;
+  margin: 217px 0 0 auto;
+}
+
+.u-section-1 .u-form-1 {
+  height: 266px;
+  width: 1140px;
+  margin: -605px calc(((100% - 1140px) / 2)) 0;
+}
+
+.u-section-1 .u-label-1 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-1 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-label-2 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-2 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-form-group-3 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-3 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-3 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-form-group-4 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-4 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-4 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-form-group-5 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-5 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-5 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: none;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 10px 30px;
+}
+
+.u-section-1 .u-text-1 {
+  margin: -535px auto 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-icon-1 {
+    width: calc(((100% - 940px) / 2) + 509px);
+    height: 438px;
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 506px;
+    width: 940px;
+    margin-top: -554px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: auto;
+    margin-top: -558px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-icon-1 {
+    width: calc(((100% - 720px) / 2) + 509px);
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 720px;
+    margin-top: -569px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-top: -556px;
+  }
+}
+
+@media (max-width: 767px) {
+   .u-section-1 {
+    min-height: 872px;
+  }
+
+  .u-section-1 .u-icon-1 {
+    width: 559px;
+    margin-top: 434px;
+    margin-right: auto;
+    margin-left: calc(((100% - 540px) / 2) + -19px);
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 540px;
+    margin-top: -723px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-top: -568px;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-1 {
+    min-height: 50vw;
+  }
+
+  .u-section-1 .u-icon-1 {
+    width: 365px;
+    margin-top: 370px;
+    margin-left: calc(((100% - 340px) / 2) + -19px);
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 1030px;
+    width: 340px;
+    margin-top: -762px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-top: -639px;
+  }
+} .u-section-2 {
+  background-image: url("../img/malecon_aerea_1.png");
+  background-position: 50% 50%;
+}
+
+.u-section-2 .u-sheet-1 {
+  min-height: 500px;
+}
