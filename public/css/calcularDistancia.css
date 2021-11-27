@@ -1,0 +1,229 @@
+ .u-section-1 {
+  background-image: none;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 924px;
+}
+
+.u-section-1 .u-text-1 {
+  margin: 30px auto 0;
+}
+
+.u-section-1 .u-shape-1 {
+  width: 1237px;
+  height: 400px;
+  margin: 79px -49px 0;
+}
+
+.u-section-1 .u-icon-1 {
+  width: 589px;
+  height: 439px;
+  margin: -72px -19px 0 auto;
+}
+
+.u-section-1 .u-shape-2 {
+  width: 1177px;
+  height: 332px;
+  margin: -733px -19px 0;
+}
+
+.u-section-1 .u-form-1 {
+  height: 709px;
+  width: 1140px;
+  margin: -329px auto 0;
+}
+
+.u-section-1 .u-label-1 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-1 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-form-group-2 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-2 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-2 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-label-3 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-3 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-form-group-4 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-4 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-input-4 {
+  font-size: 1.25rem;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: none;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 10px 30px;
+}
+
+.u-section-1 .u-btn-2 {
+  background-image: none;
+  border-style: solid;
+  margin: -40px auto 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-text-1 {
+    width: auto;
+    margin-top: 28px;
+  }
+
+  .u-section-1 .u-shape-1 {
+    height: 440px;
+    width: 991px;
+    margin-top: 28px;
+    margin-left: -26px;
+    margin-right: -26px;
+  }
+
+  .u-section-1 .u-icon-1 {
+    height: 438px;
+    margin-top: -102px;
+  }
+
+  .u-section-1 .u-shape-2 {
+    margin-top: -722px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 940px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-top: -49px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 691px;
+  }
+
+  .u-section-1 .u-shape-1 {
+    width: 720px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-icon-1 {
+    margin-top: 186px;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 292px;
+    margin-top: -511px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-top: -369px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 50vw;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-top: 64px;
+  }
+
+  .u-section-1 .u-shape-1 {
+    margin-top: 1080px;
+    width: 540px;
+  }
+
+  .u-section-1 .u-icon-1 {
+    margin-top: 179px;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
+  .u-section-1 .u-shape-2 {
+    margin-top: -721px;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-form-1 {
+    margin-top: -507px;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-top: -375px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 100vh;
+  }
+
+  .u-section-1 .u-shape-1 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-icon-1 {
+    width: 365px;
+    margin-top: 372px;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 506px;
+    margin-top: -724px;
+    margin-bottom: 60px;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-right: calc(((100% - 340px) / 2) + -104px);
+  }
+} .u-section-2 {
+  background-image: url("../img/malecon_aerea_1.png");
+  background-position: 50% 50%;
+}
+
+.u-section-2 .u-sheet-1 {
+  min-height: 500px;
+}
