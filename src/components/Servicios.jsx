@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from '../static/css/nicepage.css'
 import heavyBox from '../static/img/undraw_heavy_box_agqi.svg'
 import deliveries from '../static/img/undraw_deliveries_-131-a.svg'
 import containerShip from '../static/img/undraw_container_ship_ok-1-c.svg'
+import '../static/css/Servicios.css'
+import '../static/css/nicepage.css'
 
 export default function Servicios() {
     return (
