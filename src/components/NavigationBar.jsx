@@ -34,11 +34,17 @@ export default function NavigationBar() {
                                         <li className="u-nav-item">
                                             <a className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="Contacto.html" style={{ padding : '10px 6px' }}>Contacto</a>
                                         </li>
-                                    </ul>
-                                        <span className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 u-icon-2">
-                                            <img src={search} className="u-svg-link" alt="" />
-                                        </span>
+                                        <li className="u-nav-item">
+                                            <a style={{ padding : '10px 6px' }}></a>
+                                        </li>
+                                    </ul>             
                                 </div>
+                                <div style={{ marginRight : "0 px", marginLeft : "auto" }}>
+                                    <a href="buscar.html">
+                                        <img src={search} className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 u-icon-2" alt="" />
+                                    </a>
+                                </div>
+
                                 { /*<span className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 u-icon-2" data-href="buscar.html" data-page-id="416400489">
                                     <svg className="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 24 24"> {/*style=""}
                                         <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#svg-1d47"></use>
@@ -114,6 +120,8 @@ export default function NavigationBar() {
                         </div>      
                     </div>
 
+{/* A partir de este pedazo comienza la barra de navegacion con los iconos dorados */}
+
                     <div className="u-border-5 u-border-custom-color-3 u-custom-color-2 u-section-row u-section-row-2" id="sec-07c1">
                         <div className="u-clearfix u-sheet u-sheet-2">
                             <div className="iconsMenu u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-sm u-hidden-xs u-list u-list-1">
@@ -148,7 +156,10 @@ export default function NavigationBar() {
                                 </div>
                             </div>
                         </div>
-                            <nav className="menuPrincipal u-hidden-md u-hidden-sm u-hidden-xs u-menu u-menu-dropdown u-offcanvas u-menu-2" data-position="infoMenu">
+
+{/* A partir de este pedazo comienza la barra de navegacion con los enlaces */}
+
+                            <nav className="menuPrincipal u-offcanvas u-menu-2" data-position="infoMenu">
                                 <div className="menu-collapse u-custom-font u-font-raleway" style={{ fontSize : '2.25rem' }}>
                                     <a className="u-button-style u-custom-color-3 u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-nav-link u-text-custom-color-3" href="#" style= {{ backgroundImage : 'none' }}>
                                         <svg>
@@ -236,76 +247,76 @@ export default function NavigationBar() {
 
                             <div className="u-custom-menu u-nav-container-collapse">
                                 <div className="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                                <div className="u-inner-container-layout u-sidenav-overflow">
-                                    <div className="u-menu-close">
+                                    <div className="u-inner-container-layout u-sidenav-overflow">
+                                        <div className="u-menu-close">
 
+                                        </div>
+                                        <ul className="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-9">
+                                            <li className="u-nav-item">
+                                                <a className="u-button-style u-nav-link" style={{ padding : '10px 60px' }}>Registro</a>
+                                                <div className="u-nav-popup">
+                                                    <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-10">
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="Registro.html">Registrar usuario</a>
+                                                        </li>
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="crearOrden.html">Registrar orden</a>
+                                                        </li>
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="registrarPuerto.html">Registrar puerto</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li className="u-nav-item">
+                                                <a className="u-button-style u-nav-link" href="Órdenes.html" style={{ padding : '10px 60px' }}>Órdenes</a>
+                                                <div className="u-nav-popup">
+                                                    <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-11">
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="crearOrden.html">Crear</a>
+                                                        </li>
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="buscar.html">Buscar</a>
+                                                            <div className="u-nav-popup">
+                                                                <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-12">
+                                                                    <li className="u-nav-item">
+                                                                        <a className="u-button-style u-nav-link" href="historial.html">Historial</a>
+                                                                    </li>
+                                                                    <li className="u-nav-item">
+                                                                        <a className="u-button-style u-nav-link" href="Estado.html">Estado de orden</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li className="u-nav-item">
+                                                <a className="u-button-style u-nav-link" href="Puertos.html" style={{ padding : '10px 60px' }}>Puertos</a>
+                                                <div className="u-nav-popup">
+                                                    <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-13">
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="listarPuertos.html">Listar puertos</a>
+                                                        </li>
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="calcularDistancia.html">Calcular distancia</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li className="u-nav-item">
+                                                <a className="u-button-style u-nav-link" style={{ padding : '10px 60px' }}>Ajustes</a>
+                                                <div className="u-nav-popup">
+                                                    <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-14">
+                                                        <li className="u-nav-item">
+                                                            <a className="u-button-style u-nav-link" href="costoDeMilla.html">Costo de milla</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <ul className="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-9">
-                                        <li className="u-nav-item">
-                                            <a className="u-button-style u-nav-link" style={{ padding : '10px 60px' }}>Registro</a>
-                                            <div className="u-nav-popup">
-                                                <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-10">
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="Registro.html">Registrar usuario</a>
-                                                    </li>
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="crearOrden.html">Registrar orden</a>
-                                                    </li>
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="registrarPuerto.html">Registrar puerto</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li className="u-nav-item">
-                                            <a className="u-button-style u-nav-link" href="Órdenes.html" style={{ padding : '10px 60px' }}>Órdenes</a>
-                                            <div className="u-nav-popup">
-                                                <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-11">
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="crearOrden.html">Crear</a>
-                                                    </li>
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="buscar.html">Buscar</a>
-                                                        <div className="u-nav-popup">
-                                                            <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-12">
-                                                                <li className="u-nav-item">
-                                                                    <a className="u-button-style u-nav-link" href="historial.html">Historial</a>
-                                                                </li>
-                                                                <li className="u-nav-item">
-                                                                    <a className="u-button-style u-nav-link" href="Estado.html">Estado de orden</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li className="u-nav-item">
-                                            <a className="u-button-style u-nav-link" href="Puertos.html" style={{ padding : '10px 60px' }}>Puertos</a>
-                                            <div className="u-nav-popup">
-                                                <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-13">
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="listarPuertos.html">Listar puertos</a>
-                                                    </li>
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="calcularDistancia.html">Calcular distancia</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li className="u-nav-item">
-                                            <a className="u-button-style u-nav-link" style={{ padding : '10px 60px' }}>Ajustes</a>
-                                            <div className="u-nav-popup">
-                                                <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-14">
-                                                    <li className="u-nav-item">
-                                                        <a className="u-button-style u-nav-link" href="costoDeMilla.html">Costo de milla</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
                                 </div>
-                            </div>
                                     <div className="u-black u-menu-overlay u-opacity u-opacity-70">
 
                                     </div>
