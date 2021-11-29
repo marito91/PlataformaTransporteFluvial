@@ -5,7 +5,7 @@ import millaShip from '../static/img/undraw_container_ship_ok-1-c.svg'
 
 export default function CostoDeMilla() {
     return (
-        <div>
+        <>
             <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Ajuste Costo de Milla</h2>
@@ -38,9 +38,6 @@ export default function CostoDeMilla() {
                     <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2">El valor actual por milla náutica es de COP $ X.XX o USD &amp; X.XX</a>
                 </div>
             </section>
-            <section className="u-clearfix u-image u-section-2" id="sec-d686" data-image-width="1600" data-image-height="750">
-            <div className="u-clearfix u-sheet u-sheet-1"></div>
-            </section>
-        </div>
+        </>
     )
 }
