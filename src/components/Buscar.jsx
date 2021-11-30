@@ -2,7 +2,7 @@ import React from 'react'
 import shipBuscar from '../static/img/undraw_container_ship_ok-1-c.svg'
 import '../static/css/buscar.css'
 import '../static/css/nicepage.css'
-
+import Malecon from './Malecon'
 
 
 export default function Buscar() {
@@ -36,6 +36,7 @@ export default function Buscar() {
                     <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2">Ingrese hasta X pedidos, uno por línea.</a>
                 </div>
             </section>
+            <Malecon />
         </>
     )
 }

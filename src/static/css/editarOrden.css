@@ -10,7 +10,7 @@
   margin: 30px auto 0;
 }
 
-.u-section-1 .u-btn-1 {
+.u-section-1 .u-btn-1-editarOrden {
   background-image: none;
   border-style: solid;
   margin: 30px auto 0;
@@ -22,7 +22,7 @@
   margin: 328px -19px 0 auto;
 }
 
-.u-section-1 .u-form-1 {
+.u-section-1 .u-form-1-editarOrden {
   height: 709px;
   width: 1140px;
   margin: -755px auto 30px;
@@ -116,7 +116,7 @@
   font-size: 1.25rem;
 }
 
-.u-section-1 .u-btn-2 {
+.u-section-1 .u-btn-2-editarOrden {
   background-image: none;
   border-style: solid;
   font-weight: 700;
@@ -134,7 +134,7 @@
     margin-top: 28px;
   }
 
-  .u-section-1 .u-btn-1 {
+  .u-section-1 .u-btn-1-editarOrden {
     margin-top: 25px;
   }
 
@@ -167,7 +167,7 @@
     margin-top: 36px;
   }
 
-  .u-section-1 .u-btn-1 {
+  .u-section-1 .u-btn-1-editarOrden {
     margin-top: 30px;
   }
 
@@ -197,7 +197,7 @@
     margin-top: 52px;
   }
 
-  .u-section-1 .u-btn-1 {
+  .u-section-1 .u-btn-1-editarOrden {
     margin-right: calc(((100% - 340px) / 2) + -104px);
   }
 
@@ -224,3 +224,10 @@
 .u-section-2 .u-sheet-1 {
   min-height: 500px;
 }
+
+.section-1-editarOrden .form-1-editarOrden {
+  height: auto;
+  width: 1140px;
+  margin: -269px auto 0;
+}
+

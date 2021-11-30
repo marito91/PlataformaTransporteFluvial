@@ -4,6 +4,7 @@ import '../static/css/Contacto.css'
 import shipContacto from '../static/img/undraw_container_ship_ok-1-c.svg'
 import deliveriesContacto from '../static/img/undraw_deliveries_-131-a.svg'
 import heavyBoxContacto from '../static/img/undraw_heavy_box_agqi.svg'
+import Malecon from './Malecon'
 
 export default function Contacto() {
     return (
@@ -50,6 +51,7 @@ export default function Contacto() {
                     </span>
                 </div>
             </section>
+            <Malecon />
         </div>
     )
 }

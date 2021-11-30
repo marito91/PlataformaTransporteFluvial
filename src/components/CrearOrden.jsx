@@ -78,13 +78,15 @@ export default function CrearOrden() {
                         <div className="u-form-group-crearOrden u-form-partition-factor-4 u-form-group-5-crearOrden">
                             <label for="text-bc62" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-5">Peso</label>
                             <input type="text" placeholder="Weigth" id="text-bc62" name="weigthOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-5-crearOrden" required="required" />
-                        </div>
+                        </div> 
+
+                        */}
+
+                        
                         <div className="u-form-group u-form-group-6-crearOrden">
                             <label for="text-c1c1" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-6">Puerto Origen</label>
                             <input type="text" id="text-c1c1" name="originDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-6-crearOrden" required="required" />
                         </div>
-                        */}
-
                         <div className="u-form-group u-form-group-7-crearOrden">
                             <label for="text-cd75" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-7">Puerto Destino</label>
                             <input type="text" id="text-cd75" name="destinationDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-7-crearOrden" required="required" />

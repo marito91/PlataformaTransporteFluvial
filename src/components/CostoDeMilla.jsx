@@ -2,6 +2,7 @@ import React from 'react'
 import '../static/css/nicepage.css'
 import '../static/css/costoDeMilla.css'
 import millaShip from '../static/img/undraw_container_ship_ok-1-c.svg'
+import Malecon from './Malecon'
 
 export default function CostoDeMilla() {
     return (
@@ -38,6 +39,7 @@ export default function CostoDeMilla() {
                     <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2">El valor actual por milla náutica es de COP $ X.XX o USD &amp; X.XX</a>
                 </div>
             </section>
+            <Malecon />
         </>
     )
 }

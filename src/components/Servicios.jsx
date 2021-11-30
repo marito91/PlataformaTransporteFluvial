@@ -4,6 +4,7 @@ import deliveries from '../static/img/undraw_deliveries_-131-a.svg'
 import containerShip from '../static/img/undraw_container_ship_ok-1-c.svg'
 import '../static/css/Servicios.css'
 import '../static/css/nicepage.css'
+import Malecon from './Malecon'
 
 export default function Servicios() {
     return (
@@ -32,6 +33,7 @@ export default function Servicios() {
                     </span>
                 </div>
             </section>
+            <Malecon />
         </div>
     )
 }
