@@ -17,22 +17,22 @@ export default function CrearOrden() {
                             <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Nombre del artículo</label>
                             <input type="text" id="name-40e7" name="nameOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1-crearOrden" required="" />
                         </div>
-                        <div className="u-form-email u-form-group u-form-partition-factor-4">
+                        <div className="u-form-email u-form-group-crearOrden u-form-partition-factor-4">
                             <label for="email-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Alto</label>
                             <input type="email" placeholder="Height" id="email-40e7" name="heightOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2-crearOrden" required="" />
                         </div>
-                        <div className="u-form-group u-form-partition-factor-4 u-form-group-3-crearOrden">
+                        <div className="u-form-group-crearOrden u-form-partition-factor-4 u-form-group-3-crearOrden">
                             <label for="text-c25c" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-3">Ancho</label>
                             <input type="text" id="text-c25c" name="widthOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-3-crearOrden" placeholder="Width" required="required" />
                         </div>
-                        <div className="u-form-group u-form-partition-factor-4 u-form-group-4-crearOrden">
+                        <div className="u-form-group-crearOrden u-form-partition-factor-4 u-form-group-4-crearOrden">
                             <label for="text-3800" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-4">Largo</label>
                             <input type="text" placeholder="Length" id="text-3800" name="lengthOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-4-crearOrden" required="required" />
                         </div>
-                        <div className="u-form-group u-form-partition-factor-4 u-form-group-5-crearOrden">
+                        <div className="u-form-group-crearOrden u-form-partition-factor-4 u-form-group-5-crearOrden">
                             <label for="text-bc62" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-5">Peso</label>
                             <input type="text" placeholder="Weigth" id="text-bc62" name="weigthOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-5-crearOrden" required="required" />
-                        </div>
+                        
                         <div className="u-form-group u-form-group-6-crearOrden">
                             <label for="text-c1c1" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-6">Puerto Origen</label>
                             <input type="text" id="text-c1c1" name="originDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-6-crearOrden" required="required" />

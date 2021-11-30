@@ -1,5 +1,5 @@
 import React from 'react'
-import '../static/css/nicepageContacto.css'
+import '../static/css/nicepage.css'
 import '../static/css/Contacto.css'
 import shipContacto from '../static/img/undraw_container_ship_ok-1-c.svg'
 import deliveriesContacto from '../static/img/undraw_deliveries_-131-a.svg'

@@ -175,3 +175,9 @@
 .u-section-2 .u-sheet-1 {
   min-height: 500px;
 }
+
+.u-form-group-crearOrden {
+  margin-bottom: 10px;
+
+  width: 25%;
+}
