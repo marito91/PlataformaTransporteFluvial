@@ -9,7 +9,7 @@
   margin: 381px 0 0 auto;
 }
 
-.u-section-1 .u-form-1 {
+.u-section-1 .u-form-1-crearOrden {
   height: 266px;
   width: 1140px;
   margin: -315px calc(((100% - 1140px) / 2)) 0;
@@ -19,7 +19,7 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-1 {
+.u-section-1 .u-input-1-crearOrden {
   font-size: 1.25rem;
 }
 
@@ -27,11 +27,11 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-2 {
+.u-section-1 .u-input-2-crearOrden {
   font-size: 1.25rem;
 }
 
-.u-section-1 .u-form-group-3 {
+.u-section-1 .u-form-group-3-crearOrden {
   margin-left: 0;
 }
 
@@ -39,11 +39,11 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-3 {
+.u-section-1 .u-input-3-crearOrden {
   font-size: 1.25rem;
 }
 
-.u-section-1 .u-form-group-4 {
+.u-section-1 .u-form-group-4-crearOrden {
   margin-left: 0;
 }
 
@@ -51,11 +51,11 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-4 {
+.u-section-1 .u-input-4-crearOrden {
   font-size: 1.25rem;
 }
 
-.u-section-1 .u-form-group-5 {
+.u-section-1 .u-form-group-5-crearOrden {
   margin-left: 0;
 }
 
@@ -63,11 +63,11 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-5 {
+.u-section-1 .u-input-5-crearOrden {
   font-size: 1.25rem;
 }
 
-.u-section-1 .u-form-group-6 {
+.u-section-1 .u-form-group-6-crearOrden {
   margin-left: 0;
 }
 
@@ -75,11 +75,11 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-6 {
+.u-section-1 .u-input-6-crearOrden {
   font-size: 1.25rem;
 }
 
-.u-section-1 .u-form-group-7 {
+.u-section-1 .u-form-group-7-crearOrden {
   margin-left: 0;
 }
 
@@ -87,11 +87,11 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-7 {
+.u-section-1 .u-input-7-crearOrden {
   font-size: 1.25rem;
 }
 
-.u-section-1 .u-form-group-8 {
+.u-section-1 .u-form-group-8-crearOrden {
   margin-left: 0;
 }
 
@@ -99,7 +99,7 @@
   font-size: 1.5rem;
 }
 
-.u-section-1 .u-input-8 {
+.u-section-1 .u-input-8-crearOrden {
   font-size: 1.25rem;
 }
 
@@ -120,7 +120,7 @@
     height: 438px;
   }
 
-  .u-section-1 .u-form-1 {
+  .u-section-1 .u-form-1-crearOrden {
     width: 940px;
     margin-top: -768px;
     margin-left: calc(((100% - 940px) / 2));
@@ -129,7 +129,7 @@
 }
 
 @media (max-width: 991px) {
-  .u-section-1 .u-form-1 {
+  .u-section-1 .u-form-1-crearOrden {
     width: 720px;
     margin-left: calc(((100% - 720px) / 2));
     margin-right: calc(((100% - 720px) / 2));
@@ -137,7 +137,7 @@
 }
 
 @media (max-width: 767px) {
-  .u-section-1 .u-form-1 {
+  .u-section-1 .u-form-1-crearOrden {
     height: 709px;
     width: 540px;
     margin-top: -729px;
@@ -155,7 +155,7 @@
     height: 439px;
   }
 
-  .u-section-1 .u-form-1 {
+  .u-section-1 .u-form-1-crearOrden {
     height: 266px;
     width: 1140px;
     margin-top: -769px;
