@@ -7,6 +7,8 @@ import CrearOrden from './components/CrearOrden';
 import EditarOrden from './components/EditarOrden';
 import Estado from './components/Estado';
 import Footer from './components/Footer';
+import Historial from './components/Historial';
+import Login from './components/Login';
 import NavigationBar from './components/NavigationBar'
 import Servicios from './components/Servicios'
 
@@ -14,7 +16,7 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <Estado />
+      <Login />
       <Footer />
     </>
 

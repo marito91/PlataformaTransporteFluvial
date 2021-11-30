@@ -133,3 +133,18 @@
 .u-section-2 .u-sheet-1 {
   min-height: 500px;
 }
+
+.u-section-1-historial .u-shape-2-historial {
+  width: 1177px;
+  height: 357px;
+  margin: -643px -18px 0;
+}
+
+.u-section-1 .u-btn-1-historial {
+  background-image: none;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 10px 30px;
+  margin: 10px auto 0;
+}
