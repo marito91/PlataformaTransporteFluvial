@@ -111,8 +111,8 @@
   padding: 10px 30px;
 }
 
-.u-section-1 .u-text-1 {
-  margin: -730px auto 691px;
+.u-section-1 .u-text-1-crearOrden {
+  margin: 79px auto 0;
 }
 
 @media (max-width: 1199px) {
@@ -178,6 +178,11 @@
 
 .u-form-group-crearOrden {
   margin-bottom: 10px;
-
   width: 25%;
+  max-width: 25%;
 }
+
+/*.u-form-group-crearOrden .u-form-group-3-crearOrden .u-form-group-4-crearOrden .u-form-group-5-crearOrden {
+  float: left;
+  margin-left: 0;
+}*/
