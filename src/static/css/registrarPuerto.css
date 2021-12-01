@@ -164,3 +164,9 @@
 .u-section-2 .u-sheet-1 {
   min-height: 500px;
 }
+
+.u-section-1-registrarPuerto .u-form-1-registrarPuerto {
+  height: 266px;
+  width: 1220px;
+  margin: -316px calc(((100% - 1062px) / 2)) 0;
+}

@@ -34,7 +34,7 @@
   margin: -319px auto 0;
 }
 
-.u-section-1 .u-text-2 {
+.u-section-1 .u-text-2-listarPuertos {
   font-weight: 400;
   margin: -359px auto 60px;
 }
@@ -139,4 +139,9 @@
 
 .u-section-2 .u-sheet-1 {
   min-height: 500px;
+}
+
+.boatMovement {
+  margin-top: 490px;
+  margin-right: 600px;
 }
