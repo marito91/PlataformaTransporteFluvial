@@ -11,7 +11,7 @@ export default function Login() {
                 <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                     <Barco className="u-ship" />
                 </span>
-                <div className="u-form u-form-1 login-form">
+                <div className="u-form u-form-1-Login login-form">
                     <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="ingreso" style={{ padding : '10px' }}>
                         <div className="u-form-group u-form-name">
                             <label for="name-40a7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Usuario</label>

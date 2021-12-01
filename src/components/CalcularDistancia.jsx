@@ -15,10 +15,10 @@ export default function CalcularDistancia() {
                     <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                         <img src={ship} alt="" />
                     </span>
-                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2">
+                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2-CalcularDistancia">
 
                     </div>
-                    <div className="formRgs u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+                    <div className="formRgs u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-form u-form-1 u-form-1-CalcularDistancia">
                         <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formDist" style={{padding : '10px' }}>
                             <div className="u-form-group u-form-name u-form-partition-factor-2">
                                 <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Puerto Origen</label>
@@ -44,8 +44,8 @@ export default function CalcularDistancia() {
                             <div className="u-form-send-error u-form-send-message">No se pudo identificar la distancia. Intente nuevamente.</div>
                                 <input type="hidden" value="" name="recaptchaResponse" />
                         </form>
+                        <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2-calcularDistancia">El valor actual por milla náutica es de COP $ X.XX o USD &amp; X.XX</a>
                     </div>
-                        <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2">El valor actual por milla náutica es de COP $ X.XX o USD &amp; X.XX</a>
                 </div>
             </section>
             <Malecon />

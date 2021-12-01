@@ -7,7 +7,7 @@ import Malecon from './Malecon'
 export default function CrearOrden() {
     return (
         <>
-            <section className="u-clearfix u-custom-color-2 u-hidden-xs u-section-1" id="sec-7127">
+            <section className="u-clearfix u-custom-color-2 u-hidden-xs u-section-1-CrearOrden" id="sec-7127">
                 <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                     <img src={shipCreateOrder} alt="" />
                 </span>

@@ -7,14 +7,14 @@ import Barco from './Barco'
 export default function Historial() {
     return (
         <div>
-            <section className="u-clearfix u-custom-color-2 u-section-1 u-section-1-historial" id="sec-7127">
+            <section className="u-clearfix u-custom-color-2 u-section-1-historial" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Historial de órdenes</h2>
                     <div className="u-custom-color-3 u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-1"></div>
                     <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                         <Barco />
                     </span>
-                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2-historial "></div>
+                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2-historial ">
                     <div className="formRgs u-expanded-width u-form u-form-1">
                         <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formHist" style={{ padding: '10px' }}>
                             <div className="u-form-group u-form-select u-form-group-1">
@@ -37,6 +37,7 @@ export default function Historial() {
                                 <input type="submit" value="submit" className="u-form-control-hidden" />
                             </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -7,11 +7,12 @@ import CrearOrden from './components/CrearOrden';
 import EditarOrden from './components/EditarOrden';
 import Estado from './components/Estado';
 import Footer from './components/Footer';
+import Header from './components/Header';
 import Historial from './components/Historial';
 import Inicio from './components/Inicio';
 import ListarPuertos from './components/ListarPuertos';
 import Login from './components/Login';
-import NavigationBar from './components/NavigationBar'
+//import NavigationBar from './components/NavigationBar'
 import RegistrarPuerto from './components/RegistrarPuerto';
 import Registro from './components/Registro';
 import Servicios from './components/Servicios'
@@ -19,8 +20,8 @@ import Servicios from './components/Servicios'
 function App() {
   return (
     <>
-      <NavigationBar />
-      <Registro />
+      <Header />
+      <Servicios />
       <Footer />
     </>
 

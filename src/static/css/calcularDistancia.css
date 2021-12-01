@@ -22,13 +22,13 @@
   margin: -72px -19px 0 auto;
 }
 
-.u-section-1 .u-shape-2 {
+.u-section-1 .u-shape-2-CalcularDistancia {
   width: 1177px;
-  height: 332px;
-  margin: -628px -19px 0;
+  height: 427px;
+  margin: -713px -19px 0;
 }
 
-.u-section-1 .u-form-1 {
+.u-section-1 .u-form-1-CalcularDistancia {
   height: 709px;
   width: 1140px;
   margin: -329px auto 0;
@@ -82,7 +82,7 @@
   padding: 10px 30px;
 }
 
-.u-section-1 .u-btn-2 {
+.u-section-1 .u-btn-2-calcularDistancia {
   background-image: none;
   border-style: solid;
   margin: -40px auto 60px;
@@ -226,4 +226,10 @@
 
 .u-section-2 .u-sheet-1 {
   min-height: 500px;
+}
+
+.u-section-1 .u-form-1-CalcularDistancia {
+  height: 292px;
+  width: 1140px;
+  margin: -419px auto 0;
 }

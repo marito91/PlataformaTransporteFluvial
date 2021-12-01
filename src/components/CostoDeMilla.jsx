@@ -15,9 +15,9 @@ export default function CostoDeMilla() {
                     <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                         <img src={millaShip} alt="" />
                     </span>
-                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2"> 
+                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2-costoDeMilla"> 
                     </div>
-                    <div className="formRgs u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+                    <div className="formRgs u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-form u-form-1-costoDeMilla">
                         <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formCost" style={{ padding : '10px' }}>
                             <div className="u-form-group u-form-name">
                                 <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Valor Milla COP</label>
@@ -36,7 +36,7 @@ export default function CostoDeMilla() {
                                 <input type="hidden" value="" name="recaptchaResponse" />
                         </form>
                     </div>
-                    <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2">El valor actual por milla náutica es de COP $ X.XX o USD &amp; X.XX</a>
+                    <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2-costoDeMilla">El valor actual por milla náutica es de COP $ X.XX o USD &amp; X.XX</a>
                 </div>
             </section>
             <Malecon />

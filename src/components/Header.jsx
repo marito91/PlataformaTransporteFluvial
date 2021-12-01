@@ -7,7 +7,7 @@ import docker from '../static/img/bxl-docker.svg'
 import settings from '../static/img/bxs-brightness.svg'
 import search from '../static/img/bx-search.svg'
 
-export default function NavigationBar() {
+export default function Header() {
     
     return (
         <>

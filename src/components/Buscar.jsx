@@ -8,17 +8,17 @@ import Malecon from './Malecon'
 export default function Buscar() {
     return (
         <>
-            <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-7127">
+            <section className="u-clearfix u-custom-color-2 u-section-1 u-section-1-buscar" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Buscar órdenes</h2>
                     <div className="u-custom-color-3 u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-1">
                     </div>
-                        <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
+                        <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1 u-icon-1-buscar">
                             <img src={shipBuscar} alt="" />
                         </span>
-                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2"> 
+                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2-buscar"> 
                     </div>
-                    <div className="formRgs u-expanded-width u-form u-form-1">
+                    <div className="formRgs u-expanded-width u-form u-form-1-buscar">
                         <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formSrch" style={{ padding: '10px' }}>
                             <div className="u-form-group u-form-textarea u-form-group-1">
                                 <label for="textarea-deae" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Rastrear</label>
@@ -32,8 +32,8 @@ export default function Buscar() {
                             <div className="u-form-send-error u-form-send-message">No se pudieron encontrar los datos. Intente nuevamente.</div>
                             <input type="hidden" value="" name="recaptchaResponse" />
                         </form>
+                        <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2-buscar">Ingrese hasta X pedidos, uno por línea.</a>              
                     </div>
-                    <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2">Ingrese hasta X pedidos, uno por línea.</a>
                 </div>
             </section>
             <Malecon />

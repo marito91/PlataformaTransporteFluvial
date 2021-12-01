@@ -7,11 +7,9 @@ import Barco from './Barco'
 export default function Registro() {
     return (
         <div>
-            <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-7127">
+            <section className="u-clearfix u-custom-color-2 u-section-1-registro" id="sec-7127">
                 <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Registro</h2>
-                <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
-                    <Barco />
-                </span>
+                
                 <div className="formRgs u-form u-form-1">
                     <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formRgs" style={{ padding : '10px' }}>
                         <div className="u-form-group u-form-name u-form-partition-factor-2">
@@ -35,12 +33,16 @@ export default function Registro() {
                             <input type="submit" value="submit" className="u-form-control-hidden" />
                         </div>
                     </form>
-                </div>
+                
                 <div className="u-container-style u-group u-group-1">
                     <div className="u-container-layout">
                     <a href="#" className="u-active-none u-border-2 u-border-active-white u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-hover-white u-btn-2">Inicia Sesión</a>
                     <h3 className="u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-2">¿Cuentas con ID?</h3>
                     </div>
+                </div>
+                <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
+                    <Barco />
+                </span>
                 </div>
             </section>
         </div>

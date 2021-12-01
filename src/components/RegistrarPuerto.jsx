@@ -7,7 +7,7 @@ import Barco from './Barco'
 export default function RegistrarPuerto() {
     return (
         <div>
-            <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-7127">
+            <section className="u-clearfix u-custom-color-2 u-section-1-registrarPuerto" id="sec-7127">
                 <div className="formRgs u-form u-form-1-registrarPuerto">
                 <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Registro de Puertos</h2>
                     <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formDock" style={{ padding: '10px' }}>

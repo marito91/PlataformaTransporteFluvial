@@ -28,7 +28,7 @@
   margin: -628px -19px 0;
 }
 
-.u-section-1 .u-form-1 {
+.u-section-1 .u-form-1-buscar  {
   height: 281px;
   margin-top: -306px;
   margin-bottom: 0;
@@ -54,7 +54,7 @@
   padding: 10px 30px;
 }
 
-.u-section-1 .u-btn-2 {
+.u-section-1 .u-btn-2-buscar {
   background-image: none;
   border-style: solid;
   margin: -47px auto 0;
@@ -98,7 +98,7 @@
     margin-right: auto;
   }
 
-  .u-section-1 .u-form-1 {
+  .u-section-1 .u-form-1-buscar {
     margin-top: -697px;
   }
 }
@@ -155,4 +155,23 @@
 
 .u-section-2 .u-sheet-1 {
   min-height: 500px;
+}
+
+.u-section-1-buscar .u-icon-1-buscar {
+  width: 355px;
+  height: 231px;
+  background-image: none;
+  margin: -224px auto 0;
+}
+
+.u-section-1-buscar .u-shape-2-buscar {
+  width: 1177px;
+  height: 411px;
+  margin: -708px -19px 0;
+}
+
+.u-section-1-buscar .u-form-1-buscar {
+  height: 292px;
+  width: 1140px;
+  margin: -372px auto 0;
 }
