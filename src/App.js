@@ -12,7 +12,7 @@ import Historial from './components/Historial';
 import Inicio from './components/Inicio';
 import ListarPuertos from './components/ListarPuertos';
 import Login from './components/Login';
-//import NavigationBar from './components/NavigationBar'
+import Malecon from './components/Malecon';
 import RegistrarPuerto from './components/RegistrarPuerto';
 import Registro from './components/Registro';
 import Servicios from './components/Servicios'
@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Header />
-      <Servicios />
+      <Buscar />
       <Footer />
     </>
 
