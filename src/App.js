@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Header />
-      <Buscar />
+      <Estado />
       <Footer />
     </>
 
