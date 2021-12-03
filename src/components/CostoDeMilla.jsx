@@ -5,6 +5,7 @@ import millaShip from '../static/img/undraw_container_ship_ok-1-c.svg'
 import Malecon from './Malecon'
 import Header from './Header'
 import Footer from './Footer'
+import { Link } from 'react-router-dom';
 
 export default function CostoDeMilla() {
     return (

@@ -6,6 +6,7 @@ import pack from '../static/img/bx-package.svg'
 import docker from '../static/img/bxl-docker.svg'
 import settings from '../static/img/bxs-brightness.svg'
 import search from '../static/img/bx-search.svg'
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     
@@ -18,21 +19,21 @@ export default function Header() {
                             <div className="u-custom-menu u-nav-container">
                                     <ul className="u-custom-font u-font-raleway u-nav u-unstyled u-nav-1">
                                         <li className="u-nav-item">
-                                            <a href="Inicio.html" data-page-id="2081412124" className="u-image u-logo u-image-1" data-image-width="1280" data-image-height="250" title="Inicio">
+                                            <Link to="/inicio" data-page-id="2081412124" className="u-image u-logo u-image-1" data-image-width="1280" data-image-height="250" title="Inicio">
                                                 <img src={logo} className="u-logo-image u-logo-image-1" />
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="u-nav-item">
                                             <a style={{ padding : '10px 6px' }}></a>
                                         </li>
-                                        <li className="u-nav-item">
-                                            <a className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="Servicios.html" style={{ padding : '10px 6px' }}>Servicios</a>
+                                        <li className="u-nav-item">  
+                                            <Link to="/servicios" className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="Servicios.html" style={{ padding : '10px 6px' }}>Servicios</Link>
                                         </li>
                                         <li className="u-nav-item">
-                                            <a className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="calcularDistancia.html" style={{ padding : '10px 6px' }}>Cotizaciones</a>
+                                            <Link to="/calcular_envio" className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="calcularDistancia.html" style={{ padding : '10px 6px' }}>Cotizaciones</Link>
                                         </li>
                                         <li className="u-nav-item">
-                                            <a className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="Contacto.html" style={{ padding : '10px 6px' }}>Contacto</a>
+                                            <Link to="/contacto" className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="Contacto.html" style={{ padding : '10px 6px' }}>Contacto</Link>
                                         </li>
                                         <li className="u-nav-item">
                                             <a style={{ padding : '10px 6px' }}></a>
@@ -40,9 +41,9 @@ export default function Header() {
                                     </ul>             
                                 </div>
                                 <div style={{ marginRight : "0 px", marginLeft : "auto" }}>
-                                    <a href="buscar.html">
+                                    <Link to="/ordenes">
                                         <img src={search} className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 u-icon-2" alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
 
                                 { /*<span className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 u-icon-2" data-href="buscar.html" data-page-id="416400489">
@@ -181,37 +182,37 @@ export default function Header() {
                             <div className="u-custom-menu u-nav-container">
                                 <ul className="u-custom-font u-font-raleway u-nav u-unstyled u-nav-3">
                                     <li className="u-nav-item">
-                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" style={{ padding : '10px 60px' }}>Registro</a>
+                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="#" style={{ padding : '10px 60px' }}>Registro</a>
                                             <div className="u-nav-popup">
                                                 <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
                                                     <li className="u-nav-item">
-                                                        <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="Registro.html">Registrar usuario</a>
+                                                        <Link to="/registro_usuario" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="Registro.html">Registrar usuario</Link>
                                                     </li>
                                                     <li className="u-nav-item">
-                                                        <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="crearOrden.html">Registrar orden</a>
+                                                        <Link to="/registro_orden" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="crearOrden.html">Registrar orden</Link>
                                                     </li>
                                                     <li className="u-nav-item">
-                                                        <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="registrarPuerto.html">Registrar puerto</a>
+                                                        <Link to="/registro_puerto" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="registrarPuerto.html">Registrar puerto</Link>
                                                     </li>
                                                 </ul>
                                             </div>
                                     </li>
                                     <li className="u-nav-item">
-                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="Órdenes.html" style={{ padding : '10px 60px' }}>Órdenes</a>
+                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="#" style={{ padding : '10px 60px' }}>Órdenes</a>
                                             <div className="u-nav-popup">
                                                 <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
                                                     <li className="u-nav-item">
-                                                        <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="crearOrden.html">Crear</a>
+                                                        <Link to="/registro_orden" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="crearOrden.html">Crear</Link>
                                                     </li>
                                                     <li className="u-nav-item">
-                                                        <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="buscar.html">Buscar</a>
+                                                        <Link to="/ordenes" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="buscar.html">Buscar</Link>
                                                         <div className="u-nav-popup">
                                                             <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6">
                                                                 <li className="u-nav-item">
-                                                                    <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="historial.html">Historial</a>
+                                                                    <Link to="/historial" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="historial.html">Historial</Link>
                                                                 </li>
                                                                 <li className="u-nav-item">
-                                                                    <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="Estado.html">Estado de orden</a>
+                                                                    <Link to="/estado_orden" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="Estado.html">Estado de orden</Link>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -220,24 +221,24 @@ export default function Header() {
                                             </div>
                                     </li>
                                     <li className="u-nav-item">
-                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="Puertos.html" style={{ padding : '10px 60px' }}>Puertos</a>
+                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="#" style={{ padding : '10px 60px' }}>Puertos</a>
                                         <div className="u-nav-popup">
                                             <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-7">
                                                 <li className="u-nav-item">
-                                                    <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="listarPuertos.html">Listar puertos</a>
+                                                    <Link to="/puertos" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="listarPuertos.html">Listar puertos</Link>
                                                 </li>
                                                 <li className="u-nav-item">
-                                                    <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="calcularDistancia.html">Calcular distancia</a>
+                                                    <Link to="/calcular_envio" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="calcularDistancia.html">Calcular distancia</Link>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li className="u-nav-item">
-                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" style={{ padding : '10px 60px' }}>Ajustes</a>
+                                        <a className="u-button-style u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="#" style={{ padding : '10px 60px' }}>Ajustes</a>
                                         <div className="u-nav-popup">
                                             <ul className="u-border-2 u-border-custom-color-3 u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-8">
                                                 <li className="u-nav-item">
-                                                    <a className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="costoDeMilla.html">Costo de milla</a>
+                                                    <Link to="/configuracion" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="costoDeMilla.html">Costo de milla</Link>
                                                 </li>
                                             </ul>
                                         </div>

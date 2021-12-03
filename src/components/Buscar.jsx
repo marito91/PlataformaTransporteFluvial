@@ -5,6 +5,7 @@ import '../static/css/nicepage.css'
 import Malecon from './Malecon'
 import Header from './Header'
 import Footer from './Footer'
+import { Link } from 'react-router-dom';
 
 
 export default function Buscar() {
@@ -31,9 +32,6 @@ export default function Buscar() {
                                 <a href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Buscar</a>
                                 <input type="submit" value="submit" className="u-form-control-hidden" />
                             </div>
-                            <div className="u-form-send-message u-form-send-success">Órdenes encontradas con éxito.</div>
-                            <div className="u-form-send-error u-form-send-message">No se pudieron encontrar los datos. Intente nuevamente.</div>
-                            <input type="hidden" value="" name="recaptchaResponse" />
                         </form>
                         <a href="" className="aviso u-border-2 u-border-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-3 u-custom-font u-font-raleway u-hidden-xs u-radius-10 u-text-custom-color-2 u-btn-2-buscar">Ingrese hasta X pedidos, uno por línea.</a>              
                     </div>

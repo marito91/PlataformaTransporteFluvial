@@ -7,6 +7,7 @@ import heavyBoxContacto from '../static/img/undraw_heavy_box_agqi.svg'
 import Malecon from './Malecon'
 import Footer from './Footer'
 import Header from './Header'
+import { Link } from 'react-router-dom';
 
 export default function Contacto() {
     return (

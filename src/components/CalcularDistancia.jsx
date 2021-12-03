@@ -5,6 +5,7 @@ import ship from '../static/img/undraw_container_ship_ok-1-c.svg'
 import Malecon from './Malecon'
 import Footer from './Footer'
 import Header from './Header'
+import { Link } from 'react-router-dom';
 
 export default function CalcularDistancia() {
     return (

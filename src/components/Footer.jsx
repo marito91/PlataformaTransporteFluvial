@@ -3,6 +3,7 @@ import colombia from '../static/img/co-03.jpg'
 import inst from '../static/img/bxl-instagram.svg'
 import twit from '../static/img/bxl-twitter.svg'
 import face from '../static/img/bxl-facebook.svg'
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
