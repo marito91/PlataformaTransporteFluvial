@@ -5,10 +5,13 @@ import containerShip from '../static/img/undraw_container_ship_ok-1-c.svg'
 import '../static/css/Servicios.css'
 import '../static/css/nicepage.css'
 import Malecon from './Malecon'
+import Footer from './Footer'
+import Header from './Header'
 
 export default function Servicios() {
     return (
-        <div>
+        <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-1d76">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Servicios</h2>
@@ -34,6 +37,7 @@ export default function Servicios() {
                 </div>
             </section>
             <Malecon />
-        </div>
+            <Footer />
+        </>
     )
 }

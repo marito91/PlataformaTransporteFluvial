@@ -3,11 +3,14 @@ import shipBuscar from '../static/img/undraw_container_ship_ok-1-c.svg'
 import '../static/css/buscar.css'
 import '../static/css/nicepage.css'
 import Malecon from './Malecon'
+import Header from './Header'
+import Footer from './Footer'
 
 
 export default function Buscar() {
     return (
         <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-section-1 u-section-1-buscar" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Buscar órdenes</h2>
@@ -37,6 +40,7 @@ export default function Buscar() {
                 </div>
             </section>
             <Malecon />
+            <Footer />
         </>
     )
 }

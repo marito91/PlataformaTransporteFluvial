@@ -5,10 +5,13 @@ import shipContacto from '../static/img/undraw_container_ship_ok-1-c.svg'
 import deliveriesContacto from '../static/img/undraw_deliveries_-131-a.svg'
 import heavyBoxContacto from '../static/img/undraw_heavy_box_agqi.svg'
 import Malecon from './Malecon'
+import Footer from './Footer'
+import Header from './Header'
 
 export default function Contacto() {
     return (
-        <div>
+        <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-1d76">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Contacto</h2>
@@ -52,6 +55,7 @@ export default function Contacto() {
                 </div>
             </section>
             <Malecon />
-        </div>
+            <Footer />
+        </>
     )
 }

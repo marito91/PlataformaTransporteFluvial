@@ -2,11 +2,14 @@ import React from 'react'
 import '../static/css/crearOrden.css'
 import '../static/css/nicepage.css'
 import shipCreateOrder from '../static/img/undraw_container_ship_ok-1-c.svg'
+import Footer from './Footer'
+import Header from './Header'
 import Malecon from './Malecon'
 
 export default function CrearOrden() {
     return (
         <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-hidden-xs u-section-1-CrearOrden" id="sec-7127">
                 <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                     <img src={shipCreateOrder} alt="" />
@@ -103,6 +106,7 @@ export default function CrearOrden() {
                 </div>
             </section>
             <Malecon />
+            <Footer />
         </>
     )
 }

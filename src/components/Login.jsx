@@ -3,10 +3,13 @@ import Malecon from './Malecon'
 import '../static/css/nicepage.css'
 import '../static/css/login.css'
 import Barco from './Barco'
+import Header from './Header'
+import Footer from './Footer'
 
 export default function Login() {
     return (
-        <div>
+        <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-valign-middle-xs u-section-1" id="sec-1e56">
                 <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                     <Barco className="u-ship" />
@@ -34,6 +37,7 @@ export default function Login() {
                 
             </section>
             <Malecon />
-        </div>
+            <Footer />
+        </>
     )
 }

@@ -3,10 +3,13 @@ import Malecon from './Malecon'
 import '../static/css/nicepage.css'
 import '../static/css/Registro.css'
 import Barco from './Barco'
+import Footer from './Footer'
+import Header from './Header'
 
 export default function Registro() {
     return (
-        <div>
+        <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-section-1-registro" id="sec-7127">
                 <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Registro</h2>
                 
@@ -45,6 +48,7 @@ export default function Registro() {
                 </span>
                 </div>
             </section>
-        </div>
+            <Footer />
+        </>
     )
 }

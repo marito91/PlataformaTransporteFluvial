@@ -3,10 +3,13 @@ import Malecon from './Malecon'
 import '../static/css/nicepage.css'
 import '../static/css/listarPuertos.css'
 import Barco from './Barco'
+import Header from './Header'
+import Footer from './Footer'
 
 export default function ListarPuertos() {
     return (
-        <div>
+        <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     
@@ -23,6 +26,7 @@ export default function ListarPuertos() {
                 </div>
             </section>
             <Malecon />
-        </div>
+            <Footer />
+        </>
     )
 }

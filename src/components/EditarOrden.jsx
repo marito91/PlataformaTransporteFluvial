@@ -3,11 +3,14 @@ import Malecon from './Malecon'
 import '../static/css/nicepage.css'
 import '../static/css/editarOrden.css'
 import Barco from './Barco'
+import Header from './Header'
+import Footer from './Footer'
 
 
 export default function EditarOrden() {
     return (
-        <div>
+        <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-section-1 section-1-editarOrden" id="sec-7127">
                 <div className="u-clearfix u-sheet u-valign-middle-sm u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Editar Orden</h2>
@@ -60,6 +63,7 @@ export default function EditarOrden() {
                 </div>
             </section>
             <Malecon />
-        </div>
+            <Footer />
+        </>
     )
 }

@@ -3,10 +3,13 @@ import '../static/css/nicepage.css'
 import '../static/css/Estado.css'
 import Malecon from './Malecon'
 import Barco from './Barco'
+import Header from './Header'
+import Footer from './Footer'
 
 export default function Estado() {
     return (
-        <div>
+        <>
+            <Header />
             <section className="u-clearfix u-custom-color-2 u-section-1 u-section-1-estado" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Estado de Orden</h2>
@@ -39,6 +42,7 @@ export default function Estado() {
                     </div>
             </section>
             <Malecon />
-        </div>
+            <Footer />
+        </>
     )
 }
