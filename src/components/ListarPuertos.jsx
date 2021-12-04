@@ -4,6 +4,7 @@ import '../static/css/nicepage.css'
 import '../static/css/listarPuertos.css'
 import Barco from './Barco'
 import Header from './Header'
+import Menu from './Menu'
 import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ export default function ListarPuertos() {
     return (
         <>
             <Header />
+            <Menu />
             <section className="u-clearfix u-custom-color-2 u-section-1" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     

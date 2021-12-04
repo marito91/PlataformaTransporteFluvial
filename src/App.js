@@ -18,6 +18,7 @@ import RegistrarPuerto from './components/RegistrarPuerto';
 import Registro from './components/Registro';
 import Servicios from './components/Servicios'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Header from './components/Header';
 
 function App() {
   return (

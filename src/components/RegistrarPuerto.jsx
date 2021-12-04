@@ -4,6 +4,7 @@ import '../static/css/nicepage.css'
 import '../static/css/registrarPuerto.css'
 import Barco from './Barco'
 import Header from './Header'
+import Menu from './Menu'
 import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ export default function RegistrarPuerto() {
     return (
         <>
             <Header />
+            <Menu />
             <section className="u-clearfix u-custom-color-2 u-section-1-registrarPuerto" id="sec-7127">
                 <div className="formRgs u-form u-form-1-registrarPuerto">
                 <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Registro de Puertos</h2>

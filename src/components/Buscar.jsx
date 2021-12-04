@@ -4,6 +4,7 @@ import '../static/css/buscar.css'
 import '../static/css/nicepage.css'
 import Malecon from './Malecon'
 import Header from './Header'
+import Menu from './Menu'
 import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ export default function Buscar() {
     return (
         <>
             <Header />
+            <Menu />
             <section className="u-clearfix u-custom-color-2 u-section-1 u-section-1-buscar" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Buscar órdenes</h2>
