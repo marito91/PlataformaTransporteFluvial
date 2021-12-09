@@ -14,7 +14,8 @@ export default function Registro() {
     const hostBase = "http://localhost:5000"
     const [usuario, setUsuario] = useState({nombre: "", apellido: "", docType: "", document: "", email: "", userType: "", username: "", password: ""})
 
-    const nombreRef = useRef(); // Hook para agarrar la variable con el atributo de ref dentro de la funcion
+    // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
+    const nombreRef = useRef(); 
     const apellidoRef = useRef();
     const docTypeRef = useRef();
     const docRef = useRef();
@@ -22,24 +23,7 @@ export default function Registro() {
     const userTypeRef = useRef();
     const userRef = useRef();
     const passRef = useRef();
-/*
-    const registro = () => {
-        // Captura los datos de las cajas de texto
-        const nom = nombreRef.current.value;
-        const lastName = apellidoRef.current.value;
-        const documentType = doctTypeRef.current.value;
-        const documentNum = docRef.current.value;
-        const emailAddress = emailRef.current.value;
-        const userType = userTypeRef.current.value;
-        const username = userRef.current.value;
-        const password = passRef.current.value;
-        
-        const newUser = {nom, lastName, documentType, documentNum, emailAddress, userType, username, password}
-        setUsuario({newUser})
 
-        //setUsuario({nombre: name, apellido: lastName, docType: documentType, document: documentNum, email: emailAddress, userType: userType, username: username, password: password});
-    }
-*/
     function registrar() {
         const nom = nombreRef.current.value;
         const lastName = apellidoRef.current.value;
@@ -49,7 +33,7 @@ export default function Registro() {
         const userType = userTypeRef.current.value;
         const username = userRef.current.value;
         const password = passRef.current.value;
-        fetch("http://localhost:5000/registrarUsuario", {
+        fetch(`${hostBase}/registrarUsuario`, {
             headers:{ "content-type" : "application/json" },
             method:"POST",
             body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, username, password})
@@ -58,16 +42,35 @@ export default function Registro() {
             alert(data.msg);
             console.log(data.msg);
         })
-        console.log(usuario);
+        console.log({nom, lastName, documentType, document, emailAddress, userType, username, password});
+        limpiar();
+
     }
 
     function consultar() {
         // Peticion AJAX
-        const documento = docRef.current.value; // Agarra el valor del input nombre para buscar
-        fetch(`http://localhost:5000/listarUsuario`) // Promesa - Se piden los datos
+        //const { document } = docRef.current.value; // Agarra el valor del input nombre para buscar
+        const document = docRef.current.value;
+        fetch(`${hostBase}/listarUsuario/${document}`) // Promesa - Se piden los datos
             .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
             .then(res => { // Se capturan los datos
                 if (res.estado == "ok") {
+
+                    /* PARA REVISAR
+                    if (res.data.perfil === 1) {
+                        userTypeRef.current.value = 'Item 2';
+                    } else if (res.data.perfil === 2) {
+                        userTypeRef.current.value = 'Item 3';
+                    }
+                    // Se determina el tipo de documento segun la informacion que recibe
+                    if (res.data.tipo_documento === "C.C") {
+                        docTypeRef.current.value = 'Item 2';
+                    } else if (res.data.tipo_documento === "C.E") {
+                        docTypeRef.current.value = 'Item 3';
+                    } else if (res.data.tipo_documento === "NIT") {
+                        docTypeRef.current.value = 'Item 4';
+                    }*/
+
                     nombreRef.current.value = res.data.nombre;
                     apellidoRef.current.value = res.data.apellido;
                     docTypeRef.current.value = res.data.tipo_documento;
@@ -76,11 +79,22 @@ export default function Registro() {
                     userTypeRef.current.value = res.data.perfil;
                     userRef.current.value = res.data.user;
                     passRef.current.value = res.data.pass;
-                    alert(res.mensaje)
+                    alert(res.msg)
                 }else{
-                    alert(res.mensaje)
+                    alert(res.msg)
                 }
             })
+    }
+
+    function limpiar() {
+        nombreRef.current.value = "";
+        apellidoRef.current.value = "";
+        docTypeRef.current.value = "";
+        docRef.current.value = "";
+        emailRef.current.value = "";
+        userTypeRef.current.value = "";
+        userRef.current.value = "";
+        passRef.current.value = "";
     }
     
     return (
@@ -152,6 +166,7 @@ export default function Registro() {
                 </span>
                 </div>
             </section>
+            <Malecon />
             <Footer />
         </>
     )
