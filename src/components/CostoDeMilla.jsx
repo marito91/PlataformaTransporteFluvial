@@ -47,6 +47,7 @@ export default function CostoDeMilla() {
             </section>
             <Malecon />
             <Footer />
+
         </>
     )
 }

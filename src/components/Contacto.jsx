@@ -11,6 +11,28 @@ import Menu from './Menu'
 import { Link } from 'react-router-dom';
 
 export default function Contacto() {
+    
+    const hostBase = "http://localhost:5000"
+    console.log();
+    function guardar() {
+        //fetch(`${hostBase}/contacto`, {
+        fetch("http://localhost:5000/contacto", {
+            headers:{ "content-type" : "application/json" },
+            method:"POST",
+            body: JSON.stringify({ nombre:"hola", email:"hola", mensaje:"hola" })
+        }).then(data => data.json())
+            .then(data => {
+            alert(data.msg);
+            console.log(data.msg);
+        })
+    }
+
+    function limpiar() {
+        const nombre = document.getElementById("nombre").value = "";
+        const email = document.getElementById("email").value = "";
+        const mensaje = document.getElementById("mensaje").value = "";
+    }
+    
     return (
         <>
             <Header />
@@ -39,9 +61,9 @@ export default function Contacto() {
                                 <label for="message-65e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-3">Mensaje</label>
                                 <textarea placeholder="Ingrese un mensaje con su duda" rows="4" cols="50" id="message-65e7" name="messageContact" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-white" required=""></textarea>
                             </div>
-                            <div className="u-align-left u-form-group u-form-submit">
-                                <a href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Enviar</a>
-                                <input type="submit" value="submit" className="u-form-control-hidden" />
+                            <div onClick={guardar} className="u-align-left u-form-group u-form-submit">
+                                <a onClick={guardar} href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Enviar</a>
+                                <input onClick={guardar} type="submit" value="submit" className="u-form-control-hidden" />
                             </div>
                         </form>
                     </div>
