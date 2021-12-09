@@ -16,32 +16,43 @@ export default function Registro() {
 
     const nombreRef = useRef(); // Hook para agarrar la variable con el atributo de ref dentro de la funcion
     const apellidoRef = useRef();
-    const doctTypeRef = useRef();
+    const docTypeRef = useRef();
     const docRef = useRef();
     const emailRef = useRef();
     const userTypeRef = useRef();
     const userRef = useRef();
     const passRef = useRef();
+/*
     const registro = () => {
         // Captura los datos de las cajas de texto
-        const nombreRef = nombreRef.current.value;
-        const apellidoRef = apellidoRef.current.value;
-        const doctTypeRef = doctTypeRef.current.value;
-        const docRef = docRef.current.value;
-        const emailRef = emailRef.current.value;
-        const userTypeRef = userTypeRef.current.value;
-        const userRef = userRef.current.value;
-        const passRef = passRef.current.value;
+        const nom = nombreRef.current.value;
+        const lastName = apellidoRef.current.value;
+        const documentType = doctTypeRef.current.value;
+        const documentNum = docRef.current.value;
+        const emailAddress = emailRef.current.value;
+        const userType = userTypeRef.current.value;
+        const username = userRef.current.value;
+        const password = passRef.current.value;
+        
+        const newUser = {nom, lastName, documentType, documentNum, emailAddress, userType, username, password}
+        setUsuario({newUser})
 
-        setUsuario({nombre: nombreRef, apellido: apellidoRef, docType: doctTypeRef, document: docRef, email: emailRef, userType: userTypeRef, username: userRef, password: passRef});
+        //setUsuario({nombre: name, apellido: lastName, docType: documentType, document: documentNum, email: emailAddress, userType: userType, username: username, password: password});
     }
-
+*/
     function registrar() {
-        //fetch(`${hostBase}/contacto`, {
+        const nom = nombreRef.current.value;
+        const lastName = apellidoRef.current.value;
+        const documentType = docTypeRef.current.value;
+        const document = docRef.current.value;
+        const emailAddress = emailRef.current.value;
+        const userType = userTypeRef.current.value;
+        const username = userRef.current.value;
+        const password = passRef.current.value;
         fetch("http://localhost:5000/registrarUsuario", {
             headers:{ "content-type" : "application/json" },
             method:"POST",
-            body: JSON.stringify(usuario)
+            body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, username, password})
         }).then(data => data.json())
             .then(data => {
             alert(data.msg);
@@ -59,7 +70,7 @@ export default function Registro() {
                 if (res.estado == "ok") {
                     nombreRef.current.value = res.data.nombre;
                     apellidoRef.current.value = res.data.apellido;
-                    doctTypeRef.current.value = res.data.tipo_documento;
+                    docTypeRef.current.value = res.data.tipo_documento;
                     docRef.current.value = res.data.numero_documento;
                     emailRef.current.value = res.data.email;
                     userTypeRef.current.value = res.data.perfil;
@@ -91,7 +102,7 @@ export default function Registro() {
                         </div>
                         <div className="u-form-group u-form-name u-form-partition-factor-2">
                             <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Tipo de documento</label>
-                            <select ref={doctTypeRef} type="text" placeholder="Tipo de documento" id="name-40e7" name="nameRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="">
+                            <select ref={docTypeRef} type="text" placeholder="Tipo de documento" id="name-40e7" name="nameRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="">
                                 <option value="Item 1">-</option>
                                 <option value="Item 2">C.C</option>
                                 <option value="Item 3">C.E</option>
@@ -123,10 +134,10 @@ export default function Registro() {
                             <input ref={passRef} type="text" placeholder="Contraseña" id="text-3800" name="passwordRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-4" required="required" />
                         </div>
                         <div className="u-align-left u-form-group u-form-submit">
-                            <a onClick={ registro, registrar } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Registrar</a>
-                            <input onClick={ registro, registrar } type="submit" value="submit" className="u-form-control-hidden" />
-                            <a onClick={ registro, consultar } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Consultar</a>
-                            <input onClick={ registro, consultar } type="submit" value="submit" className="u-form-control-hidden" />
+                            <a onClick={ registrar } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Registrar</a>
+                            <input onClick={ registrar } type="submit" value="submit" className="u-form-control-hidden" />
+                            <a onClick={ consultar } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Consultar</a>
+                            <input onClick={ consultar } type="submit" value="submit" className="u-form-control-hidden" />
                         </div>
                     </form>
                 
