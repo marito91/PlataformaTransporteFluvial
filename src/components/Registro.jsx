@@ -7,12 +7,12 @@ import Footer from './Footer'
 import Header from './Header'
 import Menu from './Menu'
 import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 export default function Registro() {
     
     const hostBase = "http://localhost:5000"
-    const [usuario, setUsuario] = useState({nombre: "", apellido: "", docType: "", document: "", email: "", userType: "", telefono: "", password: ""})
+    //const [usuario, setUsuario] = useState({nombre: "", apellido: "", docType: "", document: "", email: "", userType: "", telefono: "", password: ""})
 
     // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
     const nombreRef = useRef(); 
@@ -48,13 +48,12 @@ export default function Registro() {
     }
 
     function consultar() {
-        // Peticion AJAX
-        //const { document } = docRef.current.value; // Agarra el valor del input nombre para buscar
+        // Se toma el valor del documento ya que es el unico
         const document = docRef.current.value;
         fetch(`${hostBase}/listarUsuario/${document}`) // Promesa - Se piden los datos
             .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
             .then(res => { // Se capturan los datos
-                if (res.estado == "ok") {
+                if (res.estado === "ok") {
 
                     /* PARA REVISAR
                     if (res.data.perfil === 1) {
@@ -86,6 +85,7 @@ export default function Registro() {
             })
     }
 
+    // Funcion para borrar los text fields apenas se registren los datos
     function limpiar() {
         nombreRef.current.value = "";
         apellidoRef.current.value = "";
