@@ -12,7 +12,7 @@ import { useRef, useState } from 'react';
 export default function Registro() {
     
     const hostBase = "http://localhost:5000"
-    const [usuario, setUsuario] = useState({nombre: "", apellido: "", docType: "", document: "", email: "", userType: "", username: "", password: ""})
+    const [usuario, setUsuario] = useState({nombre: "", apellido: "", docType: "", document: "", email: "", userType: "", telefono: "", password: ""})
 
     // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
     const nombreRef = useRef(); 
@@ -21,7 +21,7 @@ export default function Registro() {
     const docRef = useRef();
     const emailRef = useRef();
     const userTypeRef = useRef();
-    const userRef = useRef();
+    const telRef = useRef();
     const passRef = useRef();
 
     function registrar() {
@@ -31,18 +31,18 @@ export default function Registro() {
         const document = docRef.current.value;
         const emailAddress = emailRef.current.value;
         const userType = userTypeRef.current.value;
-        const username = userRef.current.value;
+        const phone = telRef.current.value;
         const password = passRef.current.value;
         fetch(`${hostBase}/registrarUsuario`, {
             headers:{ "content-type" : "application/json" },
             method:"POST",
-            body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, username, password})
+            body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password})
         }).then(data => data.json())
             .then(data => {
             alert(data.msg);
             console.log(data.msg);
         })
-        console.log({nom, lastName, documentType, document, emailAddress, userType, username, password});
+        console.log({nom, lastName, documentType, document, emailAddress, userType, phone, password});
         limpiar();
 
     }
@@ -77,7 +77,7 @@ export default function Registro() {
                     docRef.current.value = res.data.numero_documento;
                     emailRef.current.value = res.data.email;
                     userTypeRef.current.value = res.data.perfil;
-                    userRef.current.value = res.data.user;
+                    telRef.current.value = res.data.celular;
                     passRef.current.value = res.data.pass;
                     alert(res.msg)
                 }else{
@@ -93,7 +93,7 @@ export default function Registro() {
         docRef.current.value = "";
         emailRef.current.value = "";
         userTypeRef.current.value = "";
-        userRef.current.value = "";
+        telRef.current.value = "";
         passRef.current.value = "";
     }
     
@@ -129,7 +129,7 @@ export default function Registro() {
                         </div>
                         <div className="u-form-group u-form-partition-factor-2 u-form-group-2">
                             <label for="text-c25c" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Email</label>
-                            <input ref={emailRef} type="text" id="text-c25c" name="emailRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" placeholder="Correo electrónico" required="required" />
+                            <input ref={emailRef} type="text" id="text-c25c" name="emailRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" placeholder="" required="required" />
                         </div>
                         <div className="u-form-group u-form-partition-factor-2 u-form-group-2">
                             <label for="text-c25c" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Tipo de Usuario</label>
@@ -140,8 +140,8 @@ export default function Registro() {
                             </select>
                         </div>
                         <div className="u-form-email u-form-group u-form-partition-factor-2">
-                            <label for="email-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-3">Usuario</label>
-                            <input ref={userRef} type="email" placeholder="Nombre de usuario" id="email-40e7" name="usernameRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-3" required="" />
+                            <label for="email-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-3">Telefono</label>
+                            <input ref={telRef} type="email" placeholder="Numero celular" id="email-40e7" name="usernameRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-3" required="" />
                         </div>
                         <div className="u-form-group u-form-partition-factor-2 u-form-group-4">
                             <label for="text-3800" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-4">Contraseña</label>
