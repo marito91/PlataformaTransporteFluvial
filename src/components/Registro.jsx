@@ -13,7 +13,7 @@ export default function Registro() {
     
     const hostBase = "http://localhost:5000"
     //const [usuario, setUsuario] = useState({nombre: "", apellido: "", docType: "", document: "", email: "", userType: "", telefono: "", password: ""})
-
+    
     // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
     const nombreRef = useRef(); 
     const apellidoRef = useRef();

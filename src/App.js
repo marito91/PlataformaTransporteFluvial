@@ -15,7 +15,7 @@ import Registro from './components/Registro';
 import Servicios from './components/Servicios'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-
+// Para correr el front end --> npm start
 function App() {
   
   return (
