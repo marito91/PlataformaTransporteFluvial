@@ -85,6 +85,50 @@ export default function Registro() {
             })
     }
 
+    function editar() {
+        const resp = window.confirm("¿Desea EDITAR el usuario?");
+        if (resp) {
+            // Se toman los valores
+            const nom = nombreRef.current.value;
+            const lastName = apellidoRef.current.value;
+            const documentType = docTypeRef.current.value;
+            const document = docRef.current.value;
+            const emailAddress = emailRef.current.value;
+            const userType = userTypeRef.current.value;
+            const phone = telRef.current.value;
+            const password = passRef.current.value;
+            
+            fetch(`${hostBase}/user/editarUsuario`, {
+                headers:{ "content-type" : "application/json" },
+                method:"POST",
+                body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password}) // Promesa - Se piden los datos
+            }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
+            .then(res => { // Se capturan los datos
+                alert(res.msg)
+            })
+            limpiar();
+        }
+
+    }
+
+    function eliminar() {
+        const resp = window.confirm("¿Realmente desea ELIMINAR el usuario?");
+        if (resp) {
+            // Se toma el valor de documento
+            const document = docRef.current.value;
+            fetch(`${hostBase}/user/eliminarUsuario`, {
+                headers:{ "content-type" : "application/json" },
+                method:"POST",
+                body: JSON.stringify({ document }) // Promesa - Se piden los datos
+            }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
+            .then(res => { // Se capturan los datos
+                alert(res.msg)
+            })
+            limpiar();
+        }
+
+    }
+
     // Funcion para borrar los text fields apenas se registren los datos
     function limpiar() {
         nombreRef.current.value = "";
@@ -152,10 +196,10 @@ export default function Registro() {
                             <input onClick={ registrar } type="submit" value="submit" className="u-form-control-hidden" />
                             <a onClick={ consultar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Consultar</a>
                             <input onClick={ consultar } type="submit" value="submit" className="u-form-control-hidden" />
-                            <a onClick={ consultar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Editar</a>
-                            <input onClick={ consultar } type="submit" value="submit" className="u-form-control-hidden" />
-                            <a onClick={ consultar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Eliminar</a>
-                            <input onClick={ consultar } type="submit" value="submit" className="u-form-control-hidden" />
+                            <a onClick={ editar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Editar</a>
+                            <input onClick={ editar } type="submit" value="submit" className="u-form-control-hidden" />
+                            <a onClick={ eliminar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Eliminar</a>
+                            <input onClick={ eliminar } type="submit" value="submit" className="u-form-control-hidden" />
                         </div>
                     </form>
                 

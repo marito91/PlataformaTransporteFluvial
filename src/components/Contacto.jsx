@@ -8,15 +8,13 @@ import Malecon from './Malecon'
 import Footer from './Footer'
 import Header from './Header'
 import Menu from './Menu'
-import { Link } from 'react-router-dom';
 
 export default function Contacto() {
     
     const hostBase = "http://localhost:5000"
     console.log();
     function guardar() {
-        //fetch(`${hostBase}/contacto`, {
-        fetch("http://localhost:5000/contacto", {
+        fetch(`${hostBase}/contacto`, {
             headers:{ "content-type" : "application/json" },
             method:"POST",
             body: JSON.stringify({ nombre:"hola", email:"hola", mensaje:"hola" })
