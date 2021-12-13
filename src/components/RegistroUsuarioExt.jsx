@@ -47,44 +47,6 @@ export default function Registro() {
 
     }
 
-    function consultar() {
-        // Se toma el valor del documento ya que es el unico
-        const document = docRef.current.value;
-        fetch(`${hostBase}/user/listarUsuario/${document}`) // Promesa - Se piden los datos
-            .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
-            .then(res => { // Se capturan los datos
-                if (res.estado === "ok") {
-
-                    /* PARA REVISAR
-                    if (res.data.perfil === 1) {
-                        userTypeRef.current.value = 'Item 2';
-                    } else if (res.data.perfil === 2) {
-                        userTypeRef.current.value = 'Item 3';
-                    }
-                    // Se determina el tipo de documento segun la informacion que recibe
-                    if (res.data.tipo_documento === "C.C") {
-                        docTypeRef.current.value = 'Item 2';
-                    } else if (res.data.tipo_documento === "C.E") {
-                        docTypeRef.current.value = 'Item 3';
-                    } else if (res.data.tipo_documento === "NIT") {
-                        docTypeRef.current.value = 'Item 4';
-                    }*/
-
-                    nombreRef.current.value = res.data.nombre;
-                    apellidoRef.current.value = res.data.apellido;
-                    docTypeRef.current.value = res.data.tipo_documento;
-                    docRef.current.value = res.data.numero_documento;
-                    emailRef.current.value = res.data.email;
-                    userTypeRef.current.value = res.data.perfil;
-                    telRef.current.value = res.data.celular;
-                    passRef.current.value = res.data.pass;
-                    alert(res.msg)
-                }else{
-                    alert(res.msg)
-                }
-            })
-    }
-
     // Funcion para borrar los text fields apenas se registren los datos
     function limpiar() {
         nombreRef.current.value = "";
@@ -100,7 +62,6 @@ export default function Registro() {
     return (
         <>
             <Header />
-            <Menu />
             <section className="u-clearfix u-custom-color-2 u-section-1-registro" id="sec-7127">
                 <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Registro</h2>
                 
@@ -147,23 +108,16 @@ export default function Registro() {
                             <label for="text-3800" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-4">Contraseña</label>
                             <input ref={passRef} type="text" placeholder="Contraseña" id="text-3800" name="passwordRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-4" required="required" />
                         </div>
-                        <div className="div-buttons u-align-left u-form-group u-form-submit">
-                            <a onClick={ registrar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Registrar</a>
+                        <div className="u-align-left u-form-group u-form-submit">
+                            <a onClick={ registrar } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Registrar</a>
                             <input onClick={ registrar } type="submit" value="submit" className="u-form-control-hidden" />
-                            <a onClick={ consultar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Consultar</a>
-                            <input onClick={ consultar } type="submit" value="submit" className="u-form-control-hidden" />
-                            <a onClick={ consultar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Editar</a>
-                            <input onClick={ consultar } type="submit" value="submit" className="u-form-control-hidden" />
-                            <a onClick={ consultar } href="#" className="buttons-registro u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Eliminar</a>
-                            <input onClick={ consultar } type="submit" value="submit" className="u-form-control-hidden" />
                         </div>
                     </form>
                 
                 <div className="u-container-style u-group u-group-1">
-                    <div className="u-container-layout">
+                    <h3 className="u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-2 div-inicio-sesion">¿Cuentas con ID?&nbsp;
                     <Link to="/" href="#" className="u-active-none u-border-2 u-border-active-white u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-hover-white u-btn-2">Inicia Sesión</Link>
-                    <h3 className="u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-2">¿Cuentas con ID?</h3>
-                    </div>
+                    </h3>
                 </div>
                 <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                     <Barco />

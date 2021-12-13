@@ -12,6 +12,7 @@ import ListarPuertos from './components/ListarPuertos';
 import Login from './components/Login';
 import RegistrarPuerto from './components/RegistrarPuerto';
 import Registro from './components/Registro';
+import RegistroUsuarioExt from './components/RegistroUsuarioExt';
 import Servicios from './components/Servicios'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/inicio" element={<Inicio />} />
           <Route path="/registro_usuario" element={<Registro />} />
+          <Route path="/registro_usuario_ext" element={<RegistroUsuarioExt />} />
           <Route path="/registro_orden" element={<CrearOrden />} />
           <Route path="/registro_puerto" element={<RegistrarPuerto />} />
           <Route path="/editar_orden" element={<EditarOrden />} />

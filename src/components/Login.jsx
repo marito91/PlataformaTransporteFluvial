@@ -32,7 +32,7 @@ export default function Login() {
                     </form>
                 </div>
                 <p className="u-align-right u-custom-font u-font-raleway u-large-text u-text u-text-custom-color-3 u-text-variant u-text-1">¿No tienes cuenta?  
-                    <Link to="/registro_usuario" href="Registro.html" className="u-active-none  u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-custom-color-3 u-text-hover-white u-btn-2">Regístrate
+                    <Link to="/registro_usuario_ext" href="Registro.html" className="u-active-none  u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-custom-color-3 u-text-hover-white u-btn-2">Regístrate
                         <span style={{ fontSize : '1.5rem' }}></span>
                     </Link>
                 </p>
