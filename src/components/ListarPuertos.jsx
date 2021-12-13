@@ -18,7 +18,7 @@ export default function ListarPuertos() {
     let x;
     function listar() {
         let listado;
-        fetch(`${hostBase}/listarPuerto`) // Promesa - Se piden los datos
+        fetch(`${hostBase}/puertos/listarPuerto`) // Promesa - Se piden los datos
             .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
             .then(res => { // Se capturan los datos               
                 console.log(res)

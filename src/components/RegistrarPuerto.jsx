@@ -28,7 +28,7 @@ export default function RegistrarPuerto() {
         const munPto = munPtoRef.current.value;
         const rioPto = rioPtoRef.current.value;
 
-        fetch(`${hostBase}/registrarPuerto`, {
+        fetch(`${hostBase}/puertos/registrarPuerto`, {
             headers:{ "content-type" : "application/json" },
             method:"POST",
             body: JSON.stringify({nomPto, idPto, distPto, munPto, rioPto})

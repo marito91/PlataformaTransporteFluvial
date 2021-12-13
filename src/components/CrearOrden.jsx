@@ -18,7 +18,7 @@ export default function CrearOrden() {
     // Se traen los puertos para ubicarlos en los select fields
     function listar() {
         let listado;
-        fetch(`${hostBase}/listarPuerto`) // Promesa - Se piden los datos
+        fetch(`${hostBase}/ordenes/listarPuerto`) // Promesa - Se piden los datos
             .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
             .then(res => { // Se capturan los datos               
                 console.log(res)
@@ -53,7 +53,7 @@ export default function CrearOrden() {
         const origen = origenRef.current.value;
         const destino = destinoRef.current.value;
         const descripcion = descripcionRef.current.value;
-        fetch(`${hostBase}/registrarOrden`, {
+        fetch(`${hostBase}/ordenes/registrarOrden`, {
             headers:{ "content-type" : "application/json" },
             method:"POST",
             body: JSON.stringify({articulo, alto, ancho, largo, peso, origen, destino, descripcion})
@@ -70,7 +70,7 @@ export default function CrearOrden() {
     function consultar() {
         // Se toma el valor del documento ya que es el unico
         const document = docRef.current.value;
-        fetch(`${hostBase}/listarUsuario/${document}`) // Promesa - Se piden los datos
+        fetch(`${hostBase}/user/listarUsuario/${document}`) // Promesa - Se piden los datos
             .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
             .then(res => { // Se capturan los datos
                 if (res.estado === "ok") {

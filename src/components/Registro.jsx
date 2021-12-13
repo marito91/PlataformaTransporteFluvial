@@ -33,7 +33,7 @@ export default function Registro() {
         const userType = userTypeRef.current.value;
         const phone = telRef.current.value;
         const password = passRef.current.value;
-        fetch(`${hostBase}/registrarUsuario`, {
+        fetch(`${hostBase}/user/registrarUsuario`, {
             headers:{ "content-type" : "application/json" },
             method:"POST",
             body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password})
@@ -50,7 +50,7 @@ export default function Registro() {
     function consultar() {
         // Se toma el valor del documento ya que es el unico
         const document = docRef.current.value;
-        fetch(`${hostBase}/listarUsuario/${document}`) // Promesa - Se piden los datos
+        fetch(`${hostBase}/user/listarUsuario/${document}`) // Promesa - Se piden los datos
             .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
             .then(res => { // Se capturan los datos
                 if (res.estado === "ok") {
