@@ -16,6 +16,7 @@ export default function ListarPuertos() {
     const hostBase = "http://localhost:5000"
 
     const [listado, setListado] = useState([]);
+
     
     useEffect(()=>{
         fetch(`${hostBase}/puertos/listarPuerto`,{
@@ -27,6 +28,7 @@ export default function ListarPuertos() {
             }              
         })
     }, []);
+
 
     return (
         <>

@@ -7,13 +7,37 @@ import Header from './Header'
 import Menu from './Menu'
 import Malecon from './Malecon'
 import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 
 export default function CrearOrden() {
 
     const hostBase = "http://localhost:5000"
 
+    // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
+    const articuloRef = useRef(); 
+    const altoRef = useRef();
+    const anchoRef = useRef();
+    const largoRef = useRef();
+    const pesoRef = useRef();
+    const origenRef = useRef();
+    const destinoRef = useRef();
+    const descripcionRef = useRef();
+
+
+    // Seccion para cargar los puertos en los select fields
+    const [listado, setListado] = useState([]);
+
+    useEffect(()=>{
+        fetch(`${hostBase}/puertos/listarPuerto`,{
+            method:"POST"
+        }).then(res => res.json())
+        .then(res => {
+            if (res.estado === "ok"){
+                setListado(res.data);
+            }              
+        })
+    }, []);
 
     // Se traen los puertos para ubicarlos en los select fields
     function listar() {
@@ -31,19 +55,6 @@ export default function CrearOrden() {
             })
     }
         
-
-
-
-    // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
-    const articuloRef = useRef(); 
-    const altoRef = useRef();
-    const anchoRef = useRef();
-    const largoRef = useRef();
-    const pesoRef = useRef();
-    const origenRef = useRef();
-    const destinoRef = useRef();
-    const descripcionRef = useRef();
-
     function crearOrden() {
         const articulo = articuloRef.current.value;
         const alto = altoRef.current.value;
@@ -56,13 +67,12 @@ export default function CrearOrden() {
         fetch(`${hostBase}/ordenes/registrarOrden`, {
             headers:{ "content-type" : "application/json" },
             method:"POST",
-            body: JSON.stringify({articulo, alto, ancho, largo, peso, origen, destino, descripcion})
+            body: JSON.stringify({ articulo, alto, ancho, largo, peso, origen, destino, descripcion} )
         }).then(data => data.json())
             .then(data => {
             alert(data.msg);
             console.log(data.msg);
         })
-        console.log({articulo, alto, ancho, largo, peso, origen, destino, descripcion});
         limpiar();
 
     }
@@ -184,19 +194,31 @@ export default function CrearOrden() {
                         
                         <div className="u-form-group u-form-group-6-crearOrden">
                             <label for="text-c1c1" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-6">Puerto Origen</label>
-                            <input ref={origenRef} type="text" id="text-c1c1" name="originDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-6-crearOrden" required="required" />
+                            <select ref={origenRef} type="text" id="text-c1c1" name="originDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-6-crearOrden" required="required">
+                                <option value="">-- Seleccione puerto de origen --</option>
+                                {
+                                    listado.map(l => <option key={l.nombre} value={l}>{l.nombre}</option>)
+                                }
+                            </select>
+                        
+                        
                         </div>
                         <div className="u-form-group u-form-group-7-crearOrden">
                             <label for="text-cd75" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-7">Puerto Destino</label>
-                            <input ref={destinoRef} type="text" id="text-cd75" name="destinationDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-7-crearOrden" required="required" />
+                            <select ref={destinoRef} type="text" id="text-cd75" name="destinationDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-7-crearOrden" required="required">
+                                <option value="">-- Seleccione puerto de destino --</option>
+                                    {
+                                        listado.map(l => <option key={l.nombre} value={l}>{l.nombre}</option>)
+                                    }
+                            </select>
                         </div>
                         <div className="u-form-group u-form-textarea u-form-group-8-crearOrden">
                             <label for="textarea-236a" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-8">Descripción</label>
                             <textarea ref={descripcionRef} rows="4" cols="50" id="textarea-236a" name="descriptionOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-8-crearOrden" required="" placeholder="Ingrese una breve descripción del producto"></textarea>
                         </div>
                         <div className="u-align-left u-form-group u-form-submit">
-                            <a ref={crearOrden} href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Crear Orden</a>
-                            <input ref={crearOrden} type="submit" value="submit" className="u-form-control-hidden" />
+                            <a onClick={ crearOrden } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Crear Orden</a>
+                            <input onClick={ crearOrden } type="submit" value="submit" className="u-form-control-hidden" />
                         </div> 
                     </form>
                 </div>
