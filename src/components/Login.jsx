@@ -23,7 +23,7 @@ export default function Login() {
                         </div>
                         <div className="u-form-email u-form-group">
                             <label for="email-40a7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Contraseña</label>
-                            <input type="email" placeholder="Ingrese contraseña" id="email-40a7" name="password" className="u-input u-input-rectangle u-radius-8 u-white" required="" />
+                            <input type="password" placeholder="Ingrese contraseña" id="email-40a7" name="password" className="u-input u-input-rectangle u-radius-8 u-white" required="" />
                         </div>
                         <div className="u-align-left u-form-group u-form-submit">
                             <a href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1-Login">Ingresar</a>
