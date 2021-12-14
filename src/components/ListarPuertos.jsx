@@ -7,8 +7,8 @@ import Header from './Header'
 import Menu from './Menu'
 import Footer from './Footer'
 
-var listado = [{"id_puerto":3, "nombre": "Pto Colombia"}, {"id_puerto":5, "nombre": "Pto Cabuyo"}];
-var lista = [];
+//var listado = [{"id_puerto":3, "nombre": "Pto Colombia"}, {"id_puerto":5, "nombre": "Pto Cabuyo"}];
+//var lista = [];
 
 export default function ListarPuertos() {
     
@@ -46,7 +46,6 @@ export default function ListarPuertos() {
                                     <th>Puerto</th>
                                 </tr>
                             </thead>
-                            {console.log(lista)}
                             <tbody>
                                     { listado.map(l => <tr><td key={l.id_puerto} value={l}>{l.id_puerto}</td>
                                             <td key={l.nombre} value={l}>{l.nombre}</td></tr>)
