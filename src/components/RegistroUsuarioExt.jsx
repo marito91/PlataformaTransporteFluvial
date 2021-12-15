@@ -115,9 +115,8 @@ export default function Registro() {
                     </form>
                 
                 <div className="u-container-style u-group u-group-1">
-                    <h3 className="u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-2 div-inicio-sesion">¿Cuentas con ID?&nbsp;
-                    <Link to="/" href="#" className="u-active-none u-border-2 u-border-active-white u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-hover-white u-btn-2">Inicia Sesión</Link>
-                    </h3>
+                    <Link to="/" href="#" className="u-active-none u-border-2 u-border-active-white u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-hover-white u-btn-2">¿Cuentas con ID?&nbsp;Inicia Sesión</Link>
+
                 </div>
                 <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                     <Barco />

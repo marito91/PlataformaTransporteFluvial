@@ -13,7 +13,6 @@ export default function Buscar() {
     return (
         <>
             <Header />
-            <Menu />
             <section className="u-clearfix u-custom-color-2 u-section-1 u-section-1-buscar" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
                     <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Buscar órdenes</h2>
@@ -28,7 +27,10 @@ export default function Buscar() {
                         <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formSrch" style={{ padding: '10px' }}>
                             <div className="u-form-group u-form-textarea u-form-group-1">
                                 <label for="textarea-deae" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Rastrear</label>
-                                <textarea rows="4" cols="50" id="textarea-deae" name="itemSrch" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required=""></textarea>
+                                <textarea rows="2" cols="50" id="textarea-deae" name="itemSrch" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" placeHolder="Ingrese número de pedido" required=""></textarea>
+                            
+                                <label for="textarea-deae" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Estado</label>
+                                <textarea rows="2" cols="50" id="textarea-deae" name="itemSrch" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required=""></textarea>
                             </div>
                             <div className="u-align-left u-form-group u-form-submit">
                                 <a href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Buscar</a>

@@ -27,7 +27,7 @@ export default function Header() {
                                         <Link to="/servicios" className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="Servicios.html" style={{ padding : '10px 6px' }}>Servicios</Link>
                                     </li>
                                     <li className="u-nav-item">
-                                        <Link to="/calcular_envio" className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="calcularDistancia.html" style={{ padding : '10px 6px' }}>Cotizaciones</Link>
+                                        <Link to="/cotizaciones" className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="calcularDistancia.html" style={{ padding : '10px 6px' }}>Cotizaciones</Link>
                                     </li>
                                     <li className="u-nav-item">
                                         <Link to="/contacto" className="u-button-style u-nav-link u-text-active-custom-color-2 u-text-custom-color-2 u-text-hover-custom-color-3" href="Contacto.html" style={{ padding : '10px 6px' }}>Contacto</Link>

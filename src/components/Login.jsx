@@ -28,15 +28,13 @@ export default function Login() {
                         <div className="u-align-left u-form-group u-form-submit">
                             <a href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1-Login">Ingresar</a>
                             <input type="submit" value="submit" className="u-form-control-hidden" />
+                            <Link to="/registro_usuario_ext" href="Registro.html" className="u-active-none  u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-custom-color-3 u-text-hover-white loginRegistro text1">¿No tienes cuenta?&nbsp; Regístrate
+                                <span style={{ fontSize : '1.5rem' }}></span>
+                            </Link>
                         </div>
+
                     </form>
                 </div>
-                <p className="u-align-right u-custom-font u-font-raleway u-large-text u-text u-text-custom-color-3 u-text-variant u-text-1">¿No tienes cuenta?  
-                    <Link to="/registro_usuario_ext" href="Registro.html" className="u-active-none  u-border-custom-color-3 u-border-hover-white u-btn u-btn-rectangle u-button-style u-custom-font u-font-raleway u-hover-none u-none u-radius-0 u-text-active-white u-text-custom-color-3 u-text-hover-white u-btn-2">Regístrate
-                        <span style={{ fontSize : '1.5rem' }}></span>
-                    </Link>
-                </p>
-                
             </section>
             <Malecon />
             <Footer />

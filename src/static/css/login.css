@@ -45,7 +45,11 @@ CSS del Index de Nicepage - Se recupera para mejorar página de inicio
 .u-section-1-Login .u-text-1 {
   font-weight: 400;
   font-size: 1.5rem;
-  margin: -56px;
+  margin: 9px;
+}
+
+.u-section-1-Login .text1 {
+  margin: -57px auto 0;
 }
 
 .u-section-1-Login .u-btn-2 {
