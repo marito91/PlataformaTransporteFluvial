@@ -15,8 +15,7 @@ export default function CalcularDistancia() {
     // useStates 
     const [dolares, setDolares] = useState([]);
     const [pesos, setPesos] = useState([]);
-    const [origin, setOrigin] = useState([]);
-    const [destination, setDestination] = useState([]);
+
 
     const origenRef = useRef();
     const destinoRef = useRef();
@@ -45,6 +44,8 @@ export default function CalcularDistancia() {
         })
     }, []);
 
+    
+
 
     // Seccion para cargar los puertos en los select fields
     const [listado, setListado] = useState([]);
@@ -62,15 +63,13 @@ export default function CalcularDistancia() {
 
     function calcular() {
         const origen = origenRef.current.value;
-        setOrigin = origenRef.current.value;
-        console.log(origen)
-        console.log(origin);
         const destino = destinoRef.current.value;
+        console.log(origenRef)
 
         fetch(`${hostBase}/puertos/listarDistanciaPuerto`, { 
             headers:{ "content-type" : "application/json" },
             method:"POST",
-            body: JSON.stringify({ origen, destino })
+            body: JSON.stringify({ destino })
         }).then(data => data.json())
             .then(data => {
             alert(data.msg);
@@ -102,7 +101,7 @@ export default function CalcularDistancia() {
                                 <select ref={origenRef} type="text" id="name-40e7" name="originDockDist" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="" placeholder="Ingrese puerto de origen">
                                     <option value="">-- Seleccione puerto de origen --</option>
                                             {
-                                                listado.map(l => <option key={l.nombre} value={l}>{l.nombre}</option>)
+                                                listado.map(l => <option key={l.id_puerto} value={l}>{l.nombre}</option>)
                                             }
                                 </select>
                             </div>
@@ -111,7 +110,7 @@ export default function CalcularDistancia() {
                                 <select ref={destinoRef} type="text" id="text-c1c1" name="destinationDockDist" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" required="required" placeholder="Ingrese puerto de destino">
                                     <option value="">-- Seleccione puerto de destino --</option>
                                         {
-                                            listado.map(l => <option key={l.nombre} value={l}>{l.nombre}</option>)
+                                            listado.map(l => <option key={l.id_puerto} value={l}>{l.nombre}</option>)
                                         }
                                 </select>
                             </div>
