@@ -15,6 +15,8 @@ export default function CalcularDistancia() {
     // useStates 
     const [dolares, setDolares] = useState([]);
     const [pesos, setPesos] = useState([]);
+    const [origin, setOrigin] = useState('');
+    const [destination, setDestination] = useState('');
 
 
     const origenRef = useRef();
@@ -69,7 +71,7 @@ export default function CalcularDistancia() {
         fetch(`${hostBase}/puertos/listarDistanciaPuerto`, { 
             headers:{ "content-type" : "application/json" },
             method:"POST",
-            body: JSON.stringify({ destino })
+            body: JSON.stringify({ origen, destino })
         }).then(data => data.json())
             .then(data => {
             alert(data.msg);
@@ -77,8 +79,7 @@ export default function CalcularDistancia() {
         })
     }
 
-    
-    
+
     return (
         <>
             <Header />

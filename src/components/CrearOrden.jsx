@@ -38,22 +38,6 @@ export default function CrearOrden() {
             }              
         })
     }, []);
-
-    // Se traen los puertos para ubicarlos en los select fields
-    function listar() {
-        let listado;
-        fetch(`${hostBase}/ordenes/listarPuerto`) // Promesa - Se piden los datos
-            .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
-            .then(res => { // Se capturan los datos               
-                console.log(res)
-                /*for (i in res.puertos) {
-                    x = res.puertos[i];
-                    listado.push(x)
-                }*/
-                listado = res
-                console.log(listado)
-            })
-    }
         
     function crearOrden() {
         const articulo = articuloRef.current.value;
@@ -76,29 +60,6 @@ export default function CrearOrden() {
         limpiar();
 
     }
-/*
-    function consultar() {
-        // Se toma el valor del documento ya que es el unico
-        const document = docRef.current.value;
-        fetch(`${hostBase}/user/listarUsuario/${document}`) // Promesa - Se piden los datos
-            .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
-            .then(res => { // Se capturan los datos
-                if (res.estado === "ok") {
-                    articuloRef.current.value = res.data.nombre;
-                    altoRef.current.value = res.data.apellido;
-                    anchoRef.current.value = res.data.tipo_documento;
-                    largoRef.current.value = res.data.numero_documento;
-                    pesoRef.current.value = res.data.email;
-                    origenRef.current.value = res.data.perfil;
-                    destinoRef.current.value = res.data.celular;
-                    descripcionRef.current.value = res.data.pass;
-                    alert(res.msg)
-                }else{
-                    alert(res.msg)
-                }
-            })
-    }
-*/
 
     // Funcion para borrar los text fields apenas se registren los datos
     function limpiar() {

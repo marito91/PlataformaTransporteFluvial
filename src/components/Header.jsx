@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from '../static/img/logo.jpeg'
+import userLogo from '../static/img/bxs-user-circle.svg'
 import search from '../static/img/bx-search.svg'
+import '../static/css/header.css'
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -14,7 +16,7 @@ export default function Header() {
                             <div className="u-custom-menu u-nav-container">
                                 <ul className="u-custom-font u-font-raleway u-nav u-unstyled u-nav-1">
                                     <li className="u-nav-item">
-                                        <Link to="/inicio" data-page-id="2081412124" className="u-image u-logo u-image-1" data-image-width="1280" data-image-height="250" title="Inicio">
+                                        <Link to="/" data-page-id="2081412124" className="u-image u-logo u-image-1" data-image-width="1280" data-image-height="250" title="Inicio">
                                             <img src={logo} className="u-logo-image u-logo-image-1" />
                                         </Link>
                                     </li>
@@ -33,12 +35,20 @@ export default function Header() {
                                     <li className="u-nav-item">
                                         <a style={{ padding : '10px 6px' }}></a>
                                     </li>
+                                    <li className="u-nav-item">
+                                        <a style={{ padding : '10px 6px' }}></a>
+                                    </li>
+                                    <li className="u-nav-item">
+                                        <Link to="/ordenes">
+                                            <img src={search} className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 buscar" alt="" />
+                                        </Link>
+                                    </li>
+                                    <li className="u-nav-item">
+                                        <Link to="/inicio">
+                                            <img src={userLogo} className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 userbox" alt="" />
+                                        </Link>
+                                    </li>
                                 </ul>             
-                            </div>
-                            <div style={{ marginRight : "0 px", marginLeft : "auto" }}>
-                                <Link to="/ordenes">
-                                    <img src={search} className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 u-icon-2" alt="" />
-                                </Link>
                             </div>
                         </div>
                     </div>
