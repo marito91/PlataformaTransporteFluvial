@@ -15,6 +15,7 @@ import Registro from './components/Registro';
 import RegistroUsuarioExt from './components/RegistroUsuarioExt';
 import Servicios from './components/Servicios'
 import Cotizaciones from './components/Cotizaciones'
+import Factura from './components/Factura'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 // Para correr el front end --> npm start
@@ -40,6 +41,7 @@ function App() {
           <Route path="/cotizaciones" element={<Cotizaciones />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/historial" element={<Historial />} />
+          <Route path="/factura" element={<Factura />} />
         </Routes>
       </BrowserRouter>
     </>

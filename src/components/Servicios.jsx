@@ -7,8 +7,6 @@ import '../static/css/nicepage.css'
 import Malecon from './Malecon'
 import Footer from './Footer'
 import Header from './Header'
-import Menu from './Menu'
-import { Link } from 'react-router-dom';
 
 export default function Servicios() {
     return (
