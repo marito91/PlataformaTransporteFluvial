@@ -25,51 +25,43 @@ export default function Registro() {
     const passRef = useRef();
 
     function registrar() {
-        const nom = nombreRef.current.value;
-        const lastName = apellidoRef.current.value;
-        const documentType = docTypeRef.current.value;
-        const document = docRef.current.value;
-        const emailAddress = emailRef.current.value;
-        const userType = userTypeRef.current.value;
-        const phone = telRef.current.value;
-        const password = passRef.current.value;
-        fetch(`${hostBase}/user/registrarUsuario`, {
-            headers:{ "content-type" : "application/json" },
-            method:"POST",
-            body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password})
-        }).then(data => data.json())
-            .then(data => {
-            alert(data.msg);
-            console.log(data.msg);
-        })
-        console.log({nom, lastName, documentType, document, emailAddress, userType, phone, password});
-        limpiar();
+        if (docRef.current.value === "") {
+            alert("Debe ingresar un numero de documento")
+        } else {
+            const nom = nombreRef.current.value;
+            const lastName = apellidoRef.current.value;
+            const documentType = docTypeRef.current.value;
+            const document = docRef.current.value;
+            const emailAddress = emailRef.current.value;
+            const userType = userTypeRef.current.value;
+            const phone = telRef.current.value;
+            const password = passRef.current.value;
+            fetch(`${hostBase}/user/registrarUsuario`, {
+                headers:{ "content-type" : "application/json" },
+                method:"POST",
+                body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password})
+            }).then(data => data.json())
+                .then(data => {
+                alert(data.msg);
+                console.log(data.msg);
+            })
+            console.log({nom, lastName, documentType, document, emailAddress, userType, phone, password});
+            limpiar();
+        }
+
 
     }
 
     function consultar() {
+        if (docRef.current.value === "") {
+            alert("Debe ingresar un numero de documento")
+        } else {
         // Se toma el valor del documento ya que es el unico
         const document = docRef.current.value;
         fetch(`${hostBase}/user/listarUsuario/${document}`) // Promesa - Se piden los datos
             .then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
             .then(res => { // Se capturan los datos
                 if (res.estado === "ok") {
-
-                    /* PARA REVISAR
-                    if (res.data.perfil === 1) {
-                        userTypeRef.current.value = 'Item 2';
-                    } else if (res.data.perfil === 2) {
-                        userTypeRef.current.value = 'Item 3';
-                    }
-                    // Se determina el tipo de documento segun la informacion que recibe
-                    if (res.data.tipo_documento === "C.C") {
-                        docTypeRef.current.value = 'Item 2';
-                    } else if (res.data.tipo_documento === "C.E") {
-                        docTypeRef.current.value = 'Item 3';
-                    } else if (res.data.tipo_documento === "NIT") {
-                        docTypeRef.current.value = 'Item 4';
-                    }*/
-
                     nombreRef.current.value = res.data.nombre;
                     apellidoRef.current.value = res.data.apellido;
                     docTypeRef.current.value = res.data.tipo_documento;
@@ -83,50 +75,59 @@ export default function Registro() {
                     alert(res.msg)
                 }
             })
+        }
+
     }
 
     function editar() {
-        const resp = window.confirm("¿Desea EDITAR el usuario?");
-        if (resp) {
-            // Se toman los valores
-            const nom = nombreRef.current.value;
-            const lastName = apellidoRef.current.value;
-            const documentType = docTypeRef.current.value;
-            const document = docRef.current.value;
-            const emailAddress = emailRef.current.value;
-            const userType = userTypeRef.current.value;
-            const phone = telRef.current.value;
-            const password = passRef.current.value;
-            
-            fetch(`${hostBase}/user/editarUsuario`, {
-                headers:{ "content-type" : "application/json" },
-                method:"POST",
-                body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password}) // Promesa - Se piden los datos
-            }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
-            .then(res => { // Se capturan los datos
-                alert(res.msg)
-            })
-            limpiar();
+        if (docRef.current.value === "") {
+            alert("Debe ingresar un numero de documento")
+        } else {
+            const resp = window.confirm("¿Desea EDITAR el usuario?");
+            if (resp) {
+                // Se toman los valores
+                const nom = nombreRef.current.value;
+                const lastName = apellidoRef.current.value;
+                const documentType = docTypeRef.current.value;
+                const document = docRef.current.value;
+                const emailAddress = emailRef.current.value;
+                const userType = userTypeRef.current.value;
+                const phone = telRef.current.value;
+                const password = passRef.current.value;
+                
+                fetch(`${hostBase}/user/editarUsuario`, {
+                    headers:{ "content-type" : "application/json" },
+                    method:"POST",
+                    body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password}) // Promesa - Se piden los datos
+                }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
+                .then(res => { // Se capturan los datos
+                    alert(res.msg)
+                })
+                limpiar();
+            }
         }
 
     }
 
     function eliminar() {
-        const resp = window.confirm("¿Realmente desea ELIMINAR el usuario?");
-        if (resp) {
-            // Se toma el valor de documento
-            const document = docRef.current.value;
-            fetch(`${hostBase}/user/eliminarUsuario`, {
-                headers:{ "content-type" : "application/json" },
-                method:"POST",
-                body: JSON.stringify({ document }) // Promesa - Se piden los datos
-            }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
-            .then(res => { // Se capturan los datos
-                alert(res.msg)
-            })
-            limpiar();
+        if (docRef.current.value === "") {
+            alert("Debe ingresar un numero de documento")
+        } else {
+            const resp = window.confirm("¿Realmente desea ELIMINAR el usuario?");
+            if (resp) {
+                // Se toma el valor de documento
+                const document = docRef.current.value;
+                fetch(`${hostBase}/user/eliminarUsuario`, {
+                    headers:{ "content-type" : "application/json" },
+                    method:"POST",
+                    body: JSON.stringify({ document }) // Promesa - Se piden los datos
+                }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
+                .then(res => { // Se capturan los datos
+                    alert(res.msg)
+                })
+                limpiar();
+            }    
         }
-
     }
 
     // Funcion para borrar los text fields apenas se registren los datos
@@ -161,7 +162,7 @@ export default function Registro() {
                         <div className="u-form-group u-form-name u-form-partition-factor-2">
                             <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Tipo de documento</label>
                             <select ref={docTypeRef} type="text" placeholder="Tipo de documento" id="name-40e7" name="nameRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="">
-                                <option value="Item 1">-</option>
+                                <option value="Item 1"> -- Seleccione tipo de documento -- </option>
                                 <option value="Item 2">C.C</option>
                                 <option value="Item 3">C.E</option>
                                 <option value="Item 4">NIT</option>
@@ -169,7 +170,7 @@ export default function Registro() {
                         </div>
                         <div className="u-form-group u-form-name u-form-partition-factor-2">
                             <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Número de documento</label>
-                            <input ref={docRef} type="text" placeholder="Documento sin espacios o puntos" id="name-40e7" name="nameRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="" />
+                            <input ref={docRef} type="text" placeholder="Documento sin espacios o puntos" id="name-40e7" name="nameRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="required" />
                         </div>
                         <div className="u-form-group u-form-partition-factor-2 u-form-group-2">
                             <label for="text-c25c" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Email</label>
@@ -178,7 +179,7 @@ export default function Registro() {
                         <div className="u-form-group u-form-partition-factor-2 u-form-group-2">
                             <label for="text-c25c" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Tipo de Usuario</label>
                             <select ref={userTypeRef} type="text" id="text-c25c" name="emailRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" placeholder="Correo electrónico" required="required">
-                                <option value="Item 1">-</option>
+                                <option value="Item 1"> -- Seleccione tipo de usuario -- </option>
                                 <option value="Item 2">1 - Administrador</option>
                                 <option value="Item 3">2 - Usuario</option>
                             </select>

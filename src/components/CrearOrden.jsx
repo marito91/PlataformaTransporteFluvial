@@ -61,8 +61,8 @@ export default function CrearOrden() {
                     if (res.estado === "ok") {
                         alert(res.msg);
                         console.log(res.msg);
+                        limpiar();
                     }
-                    <Navigate to="/factura" />
             })
         }
     };

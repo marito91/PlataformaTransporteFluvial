@@ -16,6 +16,7 @@ import RegistroUsuarioExt from './components/RegistroUsuarioExt';
 import Servicios from './components/Servicios'
 import Cotizaciones from './components/Cotizaciones'
 import Factura from './components/Factura'
+import BuscarExt from './components/BuscarExt'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 // Para correr el front end --> npm start
@@ -33,6 +34,7 @@ function App() {
           <Route path="/registro_puerto" element={<RegistrarPuerto />} />
           <Route path="/editar_orden" element={<EditarOrden />} />
           <Route path="/ordenes" element={<Buscar />} />
+          <Route path="/buscador" element={<BuscarExt />} />
           <Route path="/puertos" element={<ListarPuertos/>} />
           <Route path="/configuracion" element={<CostoDeMilla />} />
           <Route path="/calcular_envio" element={<CalcularDistancia />} />

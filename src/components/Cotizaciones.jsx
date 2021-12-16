@@ -78,7 +78,7 @@ export default function CalcularDistancia() {
             }).then(res => res.json())
                 .then(res => {
                     if (res.estado === "ok") {
-                        alert(res.msg);
+                        //alert(res.msg);
                         distanciaRef.current.value = res.distancia + " millas náuticas";
                         valorRef.current.value = numberWithCommas(res.precio) + " pesos";
                     }

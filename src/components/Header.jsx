@@ -39,7 +39,7 @@ export default function Header() {
                                         <a style={{ padding : '10px 6px' }}></a>
                                     </li>
                                     <li className="u-nav-item">
-                                        <Link to="/ordenes">
+                                        <Link to="/buscador">
                                             <img src={search} className="u-hover-feature u-icon u-icon-circle u-text-custom-color-2 buscar" alt="" />
                                         </Link>
                                     </li>

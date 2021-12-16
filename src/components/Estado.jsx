@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import '../static/css/nicepage.css'
 import '../static/css/Estado.css'
 import Malecon from './Malecon'
@@ -9,6 +9,32 @@ import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 export default function Estado() {
+
+
+    const hostBase = "http://localhost:5000"
+
+    const numeroRef = useRef();
+    const estadoRef = useRef();
+
+    function buscar() {
+        if (numeroRef.current.value === "") {
+            alert("Por favor indique el ID de la orden.")
+        } else {
+            const numero = numeroRef.current.value;
+            fetch(`${hostBase}/ordenes/listarOrdenDetalle/${numero}`)
+            .then(res => res.json()) 
+            .then(res => { 
+                if (res.estado === "ok") {
+                    alert(res.msg);
+                    estadoRef.current.value = `Su orden se encuentra ahora mismo ${res.orden.estado_orden}`;
+                } else {
+                    alert(res.msg);
+                }
+            })
+        }
+    };
+
+
     return (
         <>
             <Header />
@@ -24,15 +50,15 @@ export default function Estado() {
                         <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formStt" style={{ padding: '10px' }}>
                             <div className="u-form-group u-form-name">
                                 <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Número de orden</label>
-                                <input type="text" id="name-40e7" name="numSt" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="" />
+                                <input ref={numeroRef} type="text" id="name-40e7" name="numSt" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="" />
                             </div>
                             <div className="u-form-group u-form-textarea u-form-group-2">
                                 <label for="textarea-236a" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Estado de la orden</label>
-                                <textarea rows="4" cols="50" id="textarea-236a" name="estadoSt" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" required=""></textarea>
+                                <textarea ref={estadoRef} rows="4" cols="50" id="textarea-236a" name="estadoSt" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" required=""></textarea>
                             </div>
                             <div className="u-align-left u-form-group u-form-submit">
-                                <a href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-2-estado">Buscar</a>
-                                <input type="submit" value="submit" className="u-form-control-hidden" />
+                                <a onClick={ buscar } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-2-estado">Buscar</a>
+                                <input onClick={ buscar } type="submit" value="submit" className="u-form-control-hidden" />
                             </div>
                         </form>
                     </div>
