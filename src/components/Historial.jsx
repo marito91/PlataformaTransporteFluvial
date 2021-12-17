@@ -27,9 +27,10 @@ export default function Historial() {
                                 <label for="select-8a69" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Organizar por:</label>
                                 <div className="u-form-select-wrapper">
                                     <select id="select-8a69" name="filter" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="required">
-                                        <option value="Item 1">Fecha</option>
-                                        <option value="Item 2">Numero de orden</option>
-                                        <option value="Item 3">Estado</option>
+                                        <option value="Item 1"> --  Seleccione un filtro  -- </option>
+                                        <option value="Item 2">Usuario</option>
+                                        <option value="Item 3">Numero de orden</option>
+                                        <option value="Item 4">Estado</option>
                                     </select>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" className="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
                                 </div>

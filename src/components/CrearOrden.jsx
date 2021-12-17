@@ -48,7 +48,6 @@ export default function CrearOrden() {
         const descr = descripcionRef.current.value;
         const origen = origenRef.current.value;
         const destino = destinoRef.current.value;
-        console.log({ art, height, width, length, weight, origen, destino, descr })
         if (origen === destino) {
             alert("Los puertos ingresados deben ser diferentes.")
         } else {
@@ -60,7 +59,6 @@ export default function CrearOrden() {
                 .then(res => {
                     if (res.estado === "ok") {
                         alert(res.msg);
-                        console.log(res.msg);
                         limpiar();
                     }
             })

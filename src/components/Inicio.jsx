@@ -14,10 +14,11 @@ export default function Inicio() {
     const hostBase = "http://localhost:5000"
 
     const [listado, setListado] = useState([]);
+    const [orderList, setOrderList] = useState([]);
 
     
     useEffect(()=>{
-        fetch(`${hostBase}/puertos/listarPuerto`,{
+        fetch(`${hostBase}/ordenes/listarOrden`,{
             method:"POST"
         }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
         .then(res => { // Se capturan los datos 
@@ -49,6 +50,15 @@ export default function Inicio() {
                                 </tr>
                             </thead>
                             <tbody>
+                                { listado.map(l => 
+                                    <tr>
+                                        <td key={l.id_orden} value={l}>{l.id_orden}</td>
+                                        <td key={l.articulo} value={l}>{l.articulo}</td>
+                                        <td key={l.puerto_origen} value={l}>{l.puerto_origen}</td>
+                                        <td key={l.puerto_destino} value={l}>{l.puerto_destino}</td>
+                                        <td key={l.estado_orden} value={l}>{l.estado_orden}</td>
+                                    </tr>)
+                                }
                             </tbody>
                         </table>
                         <div className="dashboard-btns u-align-left u-form-group u-form-submit">
@@ -62,8 +72,8 @@ export default function Inicio() {
                             </Link>
                         </div>
                     </div>
-                    <h3 className="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-2-listarPuertos">Tus últimas órdenes fueron:</h3>
-                    <div className="boatMovement boat-puertos">
+                    <h3 className="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-2-inicio title">Tus últimas órdenes fueron:</h3>
+                    <div className=" boat-puertos-dash">
                         <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
                             <Barco />
                         </span>
