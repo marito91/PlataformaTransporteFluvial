@@ -23,8 +23,8 @@ export default function RegistrarPuerto() {
 
     function registrarPto() {
         const nomPto = nomPtoRef.current.value;
-        const idPto = idPtoRef.current.value;
-        const distPto = distPtoRef.current.value;
+        const idPto = parseInt(idPtoRef.current.value);
+        const distPto = parseInt(distPtoRef.current.value);
         const munPto = munPtoRef.current.value;
         const rioPto = rioPtoRef.current.value;
 
@@ -40,6 +40,30 @@ export default function RegistrarPuerto() {
         console.log({nomPto, idPto, distPto, munPto, rioPto});
         limpiar();
 
+    }
+
+    function eliminarPto() {
+        if (idPtoRef.current.value === "") {
+            alert("Debe ingresar un numero de documento")
+        } else {
+            const resp = window.confirm(`¿Realmente desea ELIMINAR el puerto?`);
+            if (resp) {
+                const resp2 = window.confirm(`¿Realmente está seguro de que quiere ELIMINAR el puerto?`);
+                if (resp2) {
+                    // Se toma el valor de documento
+                    const puerto = parseInt(idPtoRef.current.value);
+                    fetch(`${hostBase}/puertos/eliminarPuerto`, {
+                        headers:{ "content-type" : "application/json" },
+                        method:"POST",
+                        body: JSON.stringify({ puerto }) // Promesa - Se piden los datos
+                    }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
+                    .then(res => { // Se capturan los datos
+                        alert(res.msg)
+                    })
+                    limpiar();
+                }
+            }    
+        }
     }
 
     // Funcion para borrar los text fields apenas se registren los datos
@@ -85,6 +109,8 @@ export default function RegistrarPuerto() {
                         <div className="u-align-left u-form-group u-form-submit">
                             <a onClick={ registrarPto } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Registrar</a>
                             <input onClick={ registrarPto } type="submit" value="submit" className="u-form-control-hidden" />
+                            <a onClick={ eliminarPto } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1">Eliminar</a>
+                            <input onClick={ eliminarPto } type="submit" value="submit" className="u-form-control-hidden" />
                         </div>
                     </form>
                 </div>

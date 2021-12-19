@@ -109,7 +109,7 @@ export default function CalcularDistancia() {
                                 <select ref={origenRef} type="text" id="name-40e7" name="originDockDist" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="" placeholder="Ingrese puerto de origen">
                                     <option value="">-- Seleccione puerto de origen --</option>
                                             {
-                                                listado.map(l => <option key={l.id_puerto} value={l.nombre}>{l.nombre}</option>)
+                                                listado.map(l => <option key={l.puerto_id} value={l.nombre_puerto}>{l.nombre_puerto}</option>)
                                             }
                                 </select>
                             </div>
@@ -118,7 +118,7 @@ export default function CalcularDistancia() {
                                 <select ref={destinoRef} type="text" id="text-c1c1" name="destinationDockDist" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" required="required" placeholder="Ingrese puerto de destino">
                                     <option value="">-- Seleccione puerto de destino --</option>
                                         {
-                                            listado.map(l => <option key={l.id_puerto} value={l.nombre}>{l.nombre}</option>)
+                                            listado.map(l => <option key={l.puerto_id} value={l.nombre_puerto}>{l.nombre_puerto}</option>)
                                         }
                                 </select>
                             </div>

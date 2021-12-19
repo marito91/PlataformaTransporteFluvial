@@ -65,12 +65,12 @@ export default function Registro() {
                     nombreRef.current.value = res.data.nombre;
                     apellidoRef.current.value = res.data.apellido;
                     docTypeRef.current.value = res.data.tipo_documento;
-                    docRef.current.value = res.data.numero_documento;
+                    docRef.current.value = res.data.documento;
                     emailRef.current.value = res.data.email;
                     userTypeRef.current.value = res.data.perfil;
-                    telRef.current.value = res.data.celular;
-                    passRef.current.value = res.data.pass;
-                    alert(res.msg)
+                    telRef.current.value = res.data.telefono;
+                    passRef.current.value = res.data.password;
+                    //alert(res.msg)
                 }else{
                     alert(res.msg)
                 }

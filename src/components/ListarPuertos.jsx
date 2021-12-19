@@ -46,11 +46,13 @@ export default function ListarPuertos() {
                                 <tr>
                                     <th>Id</th>
                                     <th>Puerto</th>
+                                    <th>Millas Náuticas</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                    { listado.map(l => <tr><td key={l.id_puerto} value={l}>{l.id_puerto}</td>
-                                            <td key={l.nombre} value={l}>{l.nombre}</td></tr>)
+                                    { listado.map(l => <tr><td key={l.puerto_id} value={l}>{l.puerto_id}</td>
+                                            <td key={l.nombre_puerto} value={l}>{l.nombre_puerto}</td>
+                                            <td key={l.distancia} value={l}>{l.distancia} nm</td></tr>)
                                     }
                             </tbody>
                         </table>

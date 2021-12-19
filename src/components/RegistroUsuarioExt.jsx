@@ -24,25 +24,29 @@ export default function Registro() {
     const passRef = useRef();
 
     function registrar() {
-        const nom = nombreRef.current.value;
-        const lastName = apellidoRef.current.value;
-        const documentType = docTypeRef.current.value;
-        const document = docRef.current.value;
-        const emailAddress = emailRef.current.value;
-        const userType = userTypeRef.current.value;
-        const phone = telRef.current.value;
-        const password = passRef.current.value;
-        fetch(`${hostBase}/user/registrarUsuario`, {
-            headers:{ "content-type" : "application/json" },
-            method:"POST",
-            body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password})
-        }).then(data => data.json())
-            .then(data => {
-            alert(data.msg);
-            console.log(data.msg);
-        })
-        console.log({nom, lastName, documentType, document, emailAddress, userType, phone, password});
-        limpiar();
+        if (docRef.current.value === "") {
+            alert("Debe ingresar un numero de documento")
+        } else {
+            const nom = nombreRef.current.value;
+            const lastName = apellidoRef.current.value;
+            const documentType = docTypeRef.current.value;
+            const document = docRef.current.value;
+            const emailAddress = emailRef.current.value;
+            const userType = userTypeRef.current.value;
+            const phone = telRef.current.value;
+            const password = passRef.current.value;
+            fetch(`${hostBase}/user/registrarUsuario`, {
+                headers:{ "content-type" : "application/json" },
+                method:"POST",
+                body: JSON.stringify({nom, lastName, documentType, document, emailAddress, userType, phone, password})
+            }).then(data => data.json())
+                .then(data => {
+                alert(data.msg);
+                console.log(data.msg);
+            })
+            console.log({nom, lastName, documentType, document, emailAddress, userType, phone, password});
+            limpiar();
+        }
 
     }
 
