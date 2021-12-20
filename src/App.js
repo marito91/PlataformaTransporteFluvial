@@ -17,6 +17,7 @@ import Servicios from './components/Servicios'
 import Cotizaciones from './components/Cotizaciones'
 import Factura from './components/Factura'
 import BuscarExt from './components/BuscarExt'
+import CrearOrdenExt from './components/CrearOrdenExt'
 import Invalido from './components/Invalido'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -46,6 +47,7 @@ function App() {
           <Route path="/historial" element={<Historial />} />
           <Route path="/factura" element={<Factura />} />
           <Route path="/usuario_invalido" element={<Invalido />} />
+          <Route path="/crear_orden" element={<CrearOrdenExt />} />
         </Routes>
       </BrowserRouter>
     </>

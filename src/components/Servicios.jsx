@@ -22,8 +22,7 @@ export default function Servicios() {
                         <img src={heavyBox} alt="" />
                     </span>
                     <p className="u-align-center u-custom-font u-font-raleway u-text u-text-3"> Cuentas con toda la seguridad para transportar tus cargas y productos a través del sistema fluvial colombiano.<br/>
-                    <br/>¡Afíliate a nuestros servicios!</p>
-                    
+                    <br/>Disfruta de nuestros servicios!</p>
                 </div>
             </section>
             <section className="u-clearfix u-custom-color-2 u-section-2" id="sec-b5e6">
