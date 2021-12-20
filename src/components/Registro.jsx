@@ -6,7 +6,7 @@ import Barco from './Barco'
 import Footer from './Footer'
 import Header from './Header'
 import Menu from './Menu'
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 
 export default function Registro() {
