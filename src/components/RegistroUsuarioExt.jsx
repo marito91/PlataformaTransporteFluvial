@@ -98,9 +98,8 @@ export default function Registro() {
                         <div className="u-form-group u-form-partition-factor-2 u-form-group-2">
                             <label for="text-c25c" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-2">Tipo de Usuario</label>
                             <select ref={userTypeRef} type="text" id="text-c25c" name="emailRgs" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" placeholder="Correo electrónico" required="required">
-                                <option value="Item 1">-</option>
-                                <option value="Item 2">1 - Administrador</option>
-                                <option value="Item 3">2 - Usuario</option>
+                                <option value="no type">-</option>
+                                <option value="Usuario">1 - Usuario</option>
                             </select>
                         </div>
                         <div className="u-form-email u-form-group u-form-partition-factor-2">

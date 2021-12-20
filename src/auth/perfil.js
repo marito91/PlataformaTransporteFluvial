@@ -2,15 +2,13 @@
 
 import jwtDecode from "jwt-decode";
 
-export function auth() {
-    let resp = false;
+export function perfil() {
+    let resp = '';
     try {
         if (localStorage.getItem("token")) {
             const token = localStorage.getItem("token");
             const payload = jwtDecode(token);
-            if (payload.usuario){
-                resp = true;
-            }
+            resp = payload.rol
         }
     } catch (error) {
         console.log(error);

@@ -8,6 +8,9 @@ import Menu from './Menu'
 import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
+import jwtDecode from "jwt-decode";
+
+
 export default function Historial() {
     const hostBase = "http://localhost:5000"
 
@@ -16,7 +19,7 @@ export default function Historial() {
 
     
     useEffect(()=>{
-        fetch(`${hostBase}/ordenes/listarOrden`,{
+        fetch(`${hostBase}/ordenes/listarOrden/${user}`,{
             method:"POST"
         }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
         .then(res => { // Se capturan los datos 
@@ -25,6 +28,21 @@ export default function Historial() {
             }              
         })
     }, []);
+
+    function getUser() {
+        let user = "";
+        try {
+            const token = localStorage.getItem("token")
+            const payload = jwtDecode(token);
+            const user = payload.usuario;
+            return user;
+        } catch (error) {
+            console.log(error);
+        }
+        return user;
+    }
+
+    var user = getUser();
 
     return (
         <>
@@ -44,6 +62,7 @@ export default function Historial() {
                                     <th>Nombre</th>
                                     <th>Puerto Origen</th>
                                     <th>Puerto Destino</th>
+                                    <th>Precio</th>
                                     <th>Estado</th>
                                 </tr>
                             </thead>
@@ -54,6 +73,7 @@ export default function Historial() {
                                         <td key={l.nombre_contenedor} value={l}>{l.nombre_contenedor}</td>
                                         <td key={l.puerto_origen} value={l}>{l.puerto_origen}</td>
                                         <td key={l.puerto_destino} value={l}>{l.puerto_destino}</td>
+                                        <td key={l.costo} value={l}>{l.costo}</td>
                                         <td key={l.estado_orden} value={l}>{l.estado_orden}</td>
                                     </tr>)
                                 }

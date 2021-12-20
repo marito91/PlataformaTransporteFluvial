@@ -5,8 +5,11 @@ import docker from '../static/img/bxl-docker.svg'
 import settings from '../static/img/bxs-brightness.svg'
 import { Link } from 'react-router-dom';
 
+
 export default function Menu() {
     
+    let perfil = "0";
+
     return (
         <>
             <header className=" u-clearfix u-header u-section-row-container" id="sec-a1d1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
@@ -190,7 +193,7 @@ export default function Menu() {
                                                     </li>
                                                     <li className="u-nav-item">
                                                         <Link to="/registro_puerto" className="u-active-custom-color-2 u-button-style u-custom-color-2 u-nav-link u-text-active-custom-color-3 u-text-custom-color-3 u-text-hover-white" href="registrarPuerto.html">Registrar puerto</Link>
-                                                    </li>
+                                                    </li>                                                     
                                                 </ul>
                                             </div>
                                     </li>

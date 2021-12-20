@@ -86,6 +86,7 @@ export default function Estado() {
                                     <option value="Despachada">2 - Despachada</option>
                                     <option value="En tránsito">3 - En tránsito</option>
                                     <option value="Finalizada">4 - Finalizada</option>
+                                    <option value="Cancelada">5 - Cancelada</option>
                                 </select>
                             </div>
                             <div className="u-align-left u-form-group u-form-submit">
