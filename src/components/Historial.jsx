@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Malecon from './Malecon'
 import '../static/css/nicepage.css'
 import '../static/css/historial.css'
@@ -9,43 +9,62 @@ import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 export default function Historial() {
+    const hostBase = "http://localhost:5000"
+
+    const [listado, setListado] = useState([]);
+    const [orderList, setOrderList] = useState([]);
+
+    
+    useEffect(()=>{
+        fetch(`${hostBase}/ordenes/listarOrden`,{
+            method:"POST"
+        }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
+        .then(res => { // Se capturan los datos 
+            if (res.estado === "ok"){
+                setListado(res.data);
+            }              
+        })
+    }, []);
+
     return (
         <>
-            <Header /> 
+            <Header />
             <Menu />
-            <section className="u-clearfix u-custom-color-2 u-section-1-historial" id="sec-7127">
+            <section className="u-clearfix u-custom-color-2 u-section-1 u-section-1-lp section-dashboard u-sec-1 sec-1 u-section-1-db u-sec-db sec-db" id="sec-7127">
                 <div className="u-clearfix u-sheet u-sheet-1">
-                    <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Historial de órdenes</h2>
-                    <div className="u-custom-color-3 u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-1"></div>
-                    <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
-                        <Barco />
-                    </span>
-                    <div className="u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2-historial ">
-                    <div className="formRgs u-expanded-width u-form u-form-1">
-                        <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formHist" style={{ padding: '10px' }}>
-                            <div className="u-form-group u-form-select u-form-group-1">
-                                <label for="select-8a69" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Organizar por:</label>
-                                <div className="u-form-select-wrapper">
-                                    <select id="select-8a69" name="filter" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required="required">
-                                        <option value="Item 1"> --  Seleccione un filtro  -- </option>
-                                        <option value="Item 2">Usuario</option>
-                                        <option value="Item 3">Numero de orden</option>
-                                        <option value="Item 4">Estado</option>
-                                    </select>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" className="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
-                                </div>
-                            </div>
-                            <div className="u-form-group u-form-textarea u-form-group-2">
-                                <label for="textarea-deae" className="u-custom-font u-font-raleway u-form-control-hidden u-label u-text-custom-color-3 u-label-2"></label>
-                                <textarea rows="4" cols="50" id="textarea-deae" name="itemSrch" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-2" required=""></textarea>
-                            </div>
-                                <div className="u-align-left u-form-group u-form-submit">
-                                <a href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-1 u-btn-1-historial">Buscar</a>
-                                <input type="submit" value="submit" className="u-form-control-hidden" />
-                            </div>
-                        </form>
-                        </div>
+                    
+                    <h2 className="u-align-center u-custom-font u-font-raleway u-text u-text-custom-color-3 u-text-default u-text-1">Historial</h2>       
+                    <div className="u-custom-color-3 u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-1 u-shape-1-db"></div>
+                    <div className="sec-1 shape-2 u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-shape-2 u-sha-db"></div>
+                    <div className="u-hidden-md u-hidden-sm u-hidden-xs u-radius-10 u-shape u-shape-round u-white sha-3-db">
+                        <table className="tabla-puertos" id="customers">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Puerto Origen</th>
+                                    <th>Puerto Destino</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                { listado.map(l => 
+                                    <tr>
+                                        <td key={l.order_id} value={l}>{l.order_id}</td>
+                                        <td key={l.nombre_contenedor} value={l}>{l.nombre_contenedor}</td>
+                                        <td key={l.puerto_origen} value={l}>{l.puerto_origen}</td>
+                                        <td key={l.puerto_destino} value={l}>{l.puerto_destino}</td>
+                                        <td key={l.estado_orden} value={l}>{l.estado_orden}</td>
+                                    </tr>)
+                                }
+                            </tbody>
+                        </table>
                     </div>
+                    <div className=" boat-puertos-dash">
+                        <span className="u-file-icon u-icon u-icon-rectangle u-opacity u-opacity-40 u-icon-1">
+                            <Barco />
+                        </span>
+                    </div>             
                 </div>
             </section>
             <Malecon />

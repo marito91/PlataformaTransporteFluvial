@@ -52,8 +52,8 @@ export default function Inicio() {
                             <tbody>
                                 { listado.map(l => 
                                     <tr>
-                                        <td key={l.id_orden} value={l}>{l.id_orden}</td>
-                                        <td key={l.articulo} value={l}>{l.articulo}</td>
+                                        <td key={l.order_id} value={l}>{l.order_id}</td>
+                                        <td key={l.nombre_contenedor} value={l}>{l.nombre_contenedor}</td>
                                         <td key={l.puerto_origen} value={l}>{l.puerto_origen}</td>
                                         <td key={l.puerto_destino} value={l}>{l.puerto_destino}</td>
                                         <td key={l.estado_orden} value={l}>{l.estado_orden}</td>

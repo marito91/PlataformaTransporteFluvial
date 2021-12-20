@@ -15,6 +15,7 @@ export default function CrearOrden() {
     const hostBase = "http://localhost:5000"
 
     // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
+    const userRef = useRef(); 
     const articuloRef = useRef(); 
     const altoRef = useRef();
     const anchoRef = useRef();
@@ -41,6 +42,7 @@ export default function CrearOrden() {
         
     function crearOrden() {
         const art = articuloRef.current.value;
+        const user = userRef.current.value;
         const height = parseInt(altoRef.current.value);
         const width = parseInt(anchoRef.current.value);
         const length = parseInt(largoRef.current.value);
@@ -50,13 +52,16 @@ export default function CrearOrden() {
         const destino = destinoRef.current.value;
         if (origen === destino) {
             alert("Los puertos ingresados deben ser diferentes.")
+        } else if (userRef.current.value === "") {
+            alert("Por favor ingrese el usuario.")
         } else {
             fetch(`${hostBase}/ordenes/registrarOrden`, {
                 headers:{ "content-type" : "application/json" },
                 method:"POST",
-                body: JSON.stringify({ art, height, width, length, weight, origen, destino, descr })
+                body: JSON.stringify({ user, art, height, width, length, weight, origen, destino, descr })
             }).then(res => res.json())
                 .then(res => {
+                    console.log(res.msg)
                     if (res.estado === "ok") {
                         alert(res.msg);
                         limpiar();
@@ -67,6 +72,7 @@ export default function CrearOrden() {
 
     // Funcion para borrar los text fields apenas se registren los datos
     function limpiar() {
+        userRef.current.value ="";
         articuloRef.current.value = "";
         altoRef.current.value = "";
         anchoRef.current.value = "";
@@ -91,6 +97,8 @@ export default function CrearOrden() {
                         <div className="u-form-group u-form-name">
                             <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Nombre del artículo</label>
                             <input ref={articuloRef} type="text" id="name-40e7" name="nameOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1-crearOrden" required="" />
+                            <label for="name-40e7" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Usuario</label>
+                            <input ref={userRef} placeholder="Ingrese su usuario" type="text" id="name-40e7" name="nameOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1-crearOrden" required="" />
                         </div>
                         <table style={{ width : '100%' }}>
                             <tr>
@@ -135,7 +143,7 @@ export default function CrearOrden() {
                             <select ref={origenRef} type="text" id="text-c1c1" name="originDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-6-crearOrden" required="required">
                                 <option value="">-- Seleccione puerto de origen --</option>
                                 {
-                                    listado.map(l => <option key={l.id_puerto} value={l.nombre}>{l.nombre}</option>)
+                                    listado.map(l => <option key={l.puerto_id} value={l.nombre_puerto}>{l.nombre_puerto}</option>)
                                 }
                             </select>
                         
@@ -146,7 +154,7 @@ export default function CrearOrden() {
                             <select ref={destinoRef} type="text" id="text-cd75" name="destinationDockOrd" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-7-crearOrden" required="required">
                                 <option value="">-- Seleccione puerto de destino --</option>
                                     {
-                                        listado.map(l => <option key={l.id_puerto} value={l.nombre}>{l.nombre}</option>)
+                                        listado.map(l => <option key={l.puerto_id} value={l.nombre_puerto}>{l.nombre_puerto}</option>)
                                     }
                             </select>
                         </div>

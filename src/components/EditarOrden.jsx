@@ -16,6 +16,7 @@ export default function EditarOrden() {
     // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
     const numeroRef = useRef();
     const articuloRef = useRef(); 
+    const estadoRef = useRef(); 
     const altoRef = useRef();
     const anchoRef = useRef();
     const largoRef = useRef();
@@ -72,6 +73,7 @@ export default function EditarOrden() {
     // Funcion para borrar los text fields apenas se registren los datos
     function limpiar() {
         articuloRef.current.value = "";
+        numeroRef.current.value = "";
         altoRef.current.value = "";
         anchoRef.current.value = "";
         largoRef.current.value = "";
@@ -125,7 +127,7 @@ export default function EditarOrden() {
                                 <select ref={origenRef} type="text" id="text-c1c1" name="originDockEdit" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-6" required="required">
                                     <option value="">-- Seleccione puerto de origen --</option>
                                         {
-                                            listado.map(l => <option key={l.id_puerto} value={l.nombre}>{l.nombre}</option>)
+                                            listado.map(l => <option key={l.puerto_id} value={l.nombre_puerto}>{l.nombre_puerto}</option>)
                                         }
                                 </select>
                             </div>
@@ -134,13 +136,13 @@ export default function EditarOrden() {
                                 <select ref={destinoRef} type="text" id="text-cd75" name="destinationDockEdit" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-7" required="required">
                                     <option value="">-- Seleccione puerto de destino --</option>
                                         {
-                                            listado.map(l => <option key={l.id_puerto} value={l.nombre}>{l.nombre}</option>)
+                                            listado.map(l => <option key={l.puerto_id} value={l.nombre_puerto}>{l.nombre_puerto}</option>)
                                         }
                                 </select>
                             </div>
                             <div className="u-form-group u-form-textarea u-form-group-8">
                                 <label for="textarea-236a" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-8">Descripción</label>
-                                <textarea ref={descripcionRef} rows="4" cols="50" id="textarea-236a" name="descriptionEdit" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-8" required="" placeholder="Ingrese una breve descripción del producto"></textarea>
+                                <textarea ref={descripcionRef} rows="3" cols="50" id="textarea-236a" name="descriptionEdit" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-8" required="" placeholder="Ingrese una breve descripción del producto"></textarea>
                             </div>
                             <div className="u-align-left u-form-group u-form-submit">
                                 <a onClick={ editarOrden } href="#" className="u-active-custom-color-3 u-border-2 u-border-active-custom-color-3 u-border-custom-color-3 u-border-hover-custom-color-3 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-custom-font u-font-raleway u-hover-custom-color-3 u-radius-10 u-text-active-custom-color-2 u-text-custom-color-3 u-text-hover-custom-color-2 u-btn-2-editarOrden">Editar Orden</a>
