@@ -8,7 +8,7 @@ import Footer from './Footer'
 import Barco from './Barco'
 import { Link } from 'react-router-dom';
 
-export default function Inicio() {
+export default function Factura() {
 
 
     const hostBase = "http://localhost:5000"
@@ -17,7 +17,7 @@ export default function Inicio() {
 
     
     useEffect(()=>{
-        fetch(`${hostBase}/puertos/listarPuerto`,{
+        fetch(`${hostBase}/ordenes/listarOrden/factura`,{
             method:"POST"
         }).then(res => res.json()) // Se guardan los datos en la variables, en este caso, convertidos a json
         .then(res => { // Se capturan los datos 
@@ -45,11 +45,21 @@ export default function Inicio() {
                                     <th>Nombre</th>
                                     <th>Puerto Origen</th>
                                     <th>Puerto Destino</th>
-                                    <th>Estado</th>
                                     <th>Precio a cancelar</th>
+                                    <th>Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                { listado.map(l => 
+                                    <tr>
+                                        <td key={l.order_id} value={l.order_id}>{l.order_id}</td>
+                                        <td key={l.nombre_contenedor} value={l.nombre_contenedor}>{l.nombre_contenedor}</td>
+                                        <td key={l.puerto_origen} value={l.puerto_origen}>{l.puerto_origen}</td>
+                                        <td key={l.puerto_destino} value={l.puerto_destino}>{l.puerto_destino}</td>
+                                        <td key={l.costo} value={l.costo}>{l.costo}</td>
+                                        <td key={l.estado_orden} value={l.estado_orden}>{l.estado_orden}</td>
+                                    </tr>)
+                                }
                             </tbody>
                         </table>
                     </div>

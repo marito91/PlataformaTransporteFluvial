@@ -14,6 +14,7 @@ import { auth } from '../auth/auth';
 export default function CrearOrden() {
 
     const hostBase = "http://localhost:5000"
+    const localBase = "http://localhost:3000"
 
     // Hooks para agarrar la variables con el atributo de ref dentro de la funcion
     const userRef = useRef(); 
@@ -42,32 +43,36 @@ export default function CrearOrden() {
     }, []);
         
     function crearOrden() {
-        const art = articuloRef.current.value;
-        const user = userRef.current.value;
-        const height = parseInt(altoRef.current.value);
-        const width = parseInt(anchoRef.current.value);
-        const length = parseInt(largoRef.current.value);
-        const weight = parseInt(pesoRef.current.value);
-        const descr = descripcionRef.current.value;
-        const origen = origenRef.current.value;
-        const destino = destinoRef.current.value;
-        if (origen === destino) {
-            alert("Los puertos ingresados deben ser diferentes.")
-        } else if (userRef.current.value === "") {
-            alert("Por favor ingrese el usuario.")
-        } else {
-            fetch(`${hostBase}/ordenes/registrarOrden`, {
-                headers:{ "content-type" : "application/json" },
-                method:"POST",
-                body: JSON.stringify({ user, art, height, width, length, weight, origen, destino, descr })
-            }).then(res => res.json())
-                .then(res => {
-                    console.log(res.msg)
-                    if (res.estado === "ok") {
-                        alert(res.msg);
-                        limpiar();
-                    }
-            })
+        const resp = window.confirm("¿Está seguro que desea enviar la orden?");
+        if (resp) {
+            const art = articuloRef.current.value;
+            const user = userRef.current.value;
+            const height = parseInt(altoRef.current.value);
+            const width = parseInt(anchoRef.current.value);
+            const length = parseInt(largoRef.current.value);
+            const weight = parseInt(pesoRef.current.value);
+            const descr = descripcionRef.current.value;
+            const origen = origenRef.current.value;
+            const destino = destinoRef.current.value;
+            if (origen === destino) {
+                alert("Los puertos ingresados deben ser diferentes.")
+            } else if (userRef.current.value === "") {
+                alert("Por favor ingrese el usuario.")
+            } else {
+                fetch(`${hostBase}/ordenes/registrarOrden`, {
+                    headers:{ "content-type" : "application/json" },
+                    method:"POST",
+                    body: JSON.stringify({ user, art, height, width, length, weight, origen, destino, descr })
+                }).then(res => res.json())
+                    .then(res => {
+                        console.log(res.msg)
+                        if (res.estado === "ok") {
+                            alert(res.msg);
+                            limpiar();
+                            window.location.href = `${localBase}/factura`;
+                        }
+                })
+            }
         }
     };
 
