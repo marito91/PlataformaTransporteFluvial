@@ -28,7 +28,7 @@ export default function BuscarExt() {
             .then(res => { 
                 if (res.estado === "ok") {
                     alert(res.msg);
-                    estadoRef.current.value = `La orden se encuentra ahora mismo ${res.orden.estado_orden}`;
+                    estadoRef.current.value = `La orden ${res.orden.nombre_contenedor} con destino ${res.orden.puerto_destino} se encuentra ahora mismo ${res.orden.estado_orden}`;
                 } else {
                     alert(res.msg);
                 }

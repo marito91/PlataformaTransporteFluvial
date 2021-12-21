@@ -27,7 +27,7 @@ export default function Buscar() {
             .then(res => { 
                 if (res.estado === "ok") {
                     alert(res.msg);
-                    estadoRef.current.value = `Su orden se encuentra ahora mismo ${res.orden.estado_orden}`;
+                    estadoRef.current.value = `Su orden ${res.orden.nombre_contenedor} con destino ${res.orden.puerto_destino} se encuentra ahora mismo ${res.orden.estado_orden}`;
                 } else {
                     alert(res.msg);
                 }
@@ -56,7 +56,7 @@ export default function Buscar() {
                                 <form action="#" method="POST" className="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="formSrch" style={{ padding: '10px' }}>
                                     <div className="u-form-group u-form-textarea u-form-group-1">
                                         <label for="textarea-deae" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Rastrear</label>
-                                        <textarea ref={numeroRef} rows="2" cols="50" id="textarea-deae" name="itemSrch" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" placeHolder="Ingrese número de pedido" required=""></textarea>
+                                        <textarea ref={numeroRef} rows="2" cols="50" id="textarea-deae" name="itemSrch" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" placeholder="Ingrese número de pedido" required=""></textarea>
                                     
                                         <label for="textarea-deae" className="u-custom-font u-font-raleway u-label u-text-custom-color-3 u-label-1">Estado</label>
                                         <textarea ref={estadoRef} rows="2" cols="50" id="textarea-deae" name="itemSrch" className="u-border-1 u-border-grey-30 u-custom-font u-font-raleway u-input u-input-rectangle u-radius-10 u-text-custom-color-2 u-white u-input-1" required=""></textarea>

@@ -13,6 +13,8 @@ import jwtDecode from "jwt-decode";
 import Invalido from './Invalido'
 import { auth } from '../auth/auth';
 
+import { ordenes } from '../api/effects';
+
 export default function Inicio() {
 
 
@@ -69,6 +71,17 @@ export default function Inicio() {
 
     var name = getName();
     var user = getUser();
+
+
+/*
+    useEffect(() => {
+        const peticion = async () => {
+            const data = await ordenes(user);
+            console.log(data);
+            setListado(data);
+        }
+        peticion();
+    }, [])*/
 
     return (
         <>
